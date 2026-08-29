@@ -1,0 +1,374 @@
+/* ============================================================
+   motion.css — общий слой движения для всех кейсов портфолио.
+   Правится ТОЛЬКО здесь, в кейсы разносится через sync.sh.
+
+   Что внутри:
+   - единая палитра easing (одинаковая на всех сайтах = почерк)
+   - reveal при скролле + три страховки, чтобы контент не пропал
+   - clip-path wipe заголовков по словам
+   - живое поле фона (блобы + зерно) на scroll-timeline
+   - плавающая пилюля-меню и нижний док
+   - word-ticker для финального CTA
+   ============================================================ */
+
+:root {
+  /* Одна пара кривых на весь сайт. Разные кривые в разных местах
+     это главное, что отличает самописный сайт от сделанного. */
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);        /* базовая, out-quint */
+  --ease-open: cubic-bezier(0.32, 0.72, 0, 1);   /* только раскрытия */
+  --dur: 0.8s;
+  --dur-fast: 0.35s;
+}
+
+/* ------------------------------------------------------------
+   1. REVEAL при скролле
+   Элементы видимы по умолчанию. Прячем ТОЛЬКО когда JS подтвердил,
+   что он жив (класс на <html>). Иначе при упавшем скрипте
+   страница осталась бы пустой.
+   ------------------------------------------------------------ */
+html.js-anim [data-anim="rise"] {
+  opacity: 0;
+  transform: translateY(18px);
+}
+html.js-anim [data-anim="rise"].in {
+  opacity: 1;
+  transform: none;
+  transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease);
+}
+html.js-anim [data-anim="rise"][data-d="1"].in { transition-delay: 70ms; }
+html.js-anim [data-anim="rise"][data-d="2"].in { transition-delay: 140ms; }
+html.js-anim [data-anim="rise"][data-d="3"].in { transition-delay: 210ms; }
+html.js-anim [data-anim="rise"][data-d="4"].in { transition-delay: 280ms; }
+
+/* Страховка: если JS отключён совсем, ничего не прячем */
+@media (scripting: none) {
+  html.js-anim [data-anim="rise"] { opacity: 1; transform: none; }
+}
+
+/* ------------------------------------------------------------
+   2. WIPE заголовков по словам
+   Слово одновременно выезжает снизу и «протирается» маской.
+   Две РАЗНЫЕ длительности (0.8s маска / 0.6s сдвиг) дают вес;
+   одинаковые дали бы плоское движение.
+   ------------------------------------------------------------ */
+/* Стартовое значение 1 = «видно». Если поставить 0, заголовки
+   исчезнут навсегда при любой осечке скрипта: зарегистрированное
+   свойство перебивает запасное значение в var(--wipe, 1). */
+@property --wipe {
+  syntax: "<number>";
+  inherits: false;
+  initial-value: 1;
+}
+
+.w-word {
+  display: inline-block;
+  white-space: pre;
+  overflow: hidden;
+  /* маска доезжает до конца раньше тайминга, хвост движения
+     происходит уже на полностью видимом слове */
+  clip-path: inset(0 0 calc(100% - var(--wipe, 1) * 150%) 0);
+}
+.w-inner { display: inline-block; }
+
+html.js-anim [data-anim="wipe"] .w-word { --wipe: 0; }
+html.js-anim [data-anim="wipe"] .w-inner { transform: translateY(105%); }
+
+html.js-anim [data-anim="wipe"].in .w-word {
+  --wipe: 1;
+  transition: --wipe var(--dur) var(--ease) var(--wd, 0ms);
+}
+html.js-anim [data-anim="wipe"].in .w-inner {
+  transform: none;
+  transition: transform 0.6s var(--ease) var(--wd, 0ms);
+}
+
+@media (scripting: none) {
+  html.js-anim [data-anim="wipe"] .w-word { --wipe: 1; }
+  html.js-anim [data-anim="wipe"] .w-inner { transform: none; }
+}
+
+/* ------------------------------------------------------------
+   3. ЖИВОЕ ПОЛЕ ФОНА
+   Два-три размытых пятна + зерно. На современных браузерах
+   привязано к скроллу (ноль JS), на остальных медленно дрейфует.
+   ------------------------------------------------------------ */
+.field {
+  position: fixed;
+  inset: 0;
+  z-index: -2;
+  pointer-events: none;
+  overflow: hidden;
+}
+.field i {
+  position: absolute;
+  display: block;
+  border-radius: 50%;
+  filter: blur(110px);
+  opacity: 0.5;
+  will-change: transform;
+}
+
+/* Фолбэк: бесконечный дрейф. Отрицательные задержки, чтобы
+   пятна не стартовали синхронно (иначе видно, что это цикл). */
+@media (prefers-reduced-motion: no-preference) {
+  .field i { animation: drift 28s var(--ease) infinite alternate; }
+  .field i:nth-child(2) { animation-duration: 34s; animation-delay: -9s; }
+  .field i:nth-child(3) { animation-duration: 40s; animation-delay: -17s; }
+}
+@keyframes drift { to { transform: translate(4%, -5%); } }
+
+/* Основной вариант: пятна едут через страницу по мере скролла,
+   фон при этом холодеет. Анимируем hue-rotate/saturate,
+   но НИКОГДА не blur (пересчёт каждый кадр убивает GPU). */
+@supports (animation-timeline: scroll()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .field i { animation: none; }
+    .field .b1 { animation: linear both travel1; animation-timeline: scroll(root); }
+    .field .b2 { animation: linear both travel2; animation-timeline: scroll(root); }
+    .field .b3 { animation: linear both travel3; animation-timeline: scroll(root); }
+    .field     { animation: linear both cool;    animation-timeline: scroll(root); }
+  }
+}
+@keyframes travel1 { to { transform: translate(22vw, 76vh); } }
+@keyframes travel2 { to { transform: translate(-26vw, 62vh); } }
+@keyframes travel3 { to { transform: translate(14vw, -48vh); } }
+@keyframes cool {
+  0%  { filter: hue-rotate(5deg) saturate(1.06); }
+  to  { filter: hue-rotate(-14deg) saturate(0.84); }
+}
+
+/* Зерно поверх всего. feTurbulence считается один раз и кэшируется,
+   поэтому это дёшево. Пересеивать его каждый кадр нельзя. */
+body::after {
+  content: "";
+  position: fixed;
+  inset: -50%;
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.035;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='260' height='260'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='3'/%3E%3C/filter%3E%3Crect width='260' height='260' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+
+/* ------------------------------------------------------------
+   4. ПЛАВАЮЩАЯ ПИЛЮЛЯ-МЕНЮ
+   На десктопе сверху по центру, на мобильном уезжает вниз,
+   под большой палец. Гамбургер не нужен.
+   ------------------------------------------------------------ */
+.pill-nav {
+  position: fixed;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 1.1rem;            /* мобильный: снизу */
+  z-index: 101;
+  display: grid;
+  border-radius: 100vh;
+  /* Держим капсулу внутри экрана. Без этого длинные пункты
+     (русский длиннее английского) раздвигают её за край и вся
+     страница получает горизонтальный скролл. */
+  max-width: calc(100vw - 1.5rem);
+  overflow: hidden;
+}
+@media (min-width: 768px) {
+  .pill-nav { top: 1.1rem; bottom: auto; }
+}
+
+/* Фон живёт в ::before, а НЕ на самом .pill-nav.
+   backdrop-filter на контейнере создаёт containing block и
+   ломает position:fixed у всего, что внутри. */
+.pill-nav::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  pointer-events: none;
+  backdrop-filter: blur(10px) saturate(140%);
+  -webkit-backdrop-filter: blur(10px) saturate(140%);
+}
+
+.pill-nav ul {
+  display: grid;
+  grid-auto-flow: column;
+  margin: 0;
+  padding: 0.35rem;
+  list-style: none;
+  border-radius: inherit;
+  /* Если пункты всё же не влезли, их можно пролистать внутри
+     капсулы, а не потерять за краем экрана. */
+  overflow-x: auto;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  overscroll-behavior-x: contain;
+}
+.pill-nav ul::-webkit-scrollbar { display: none; }
+.pill-nav a {
+  display: block;
+  position: relative;
+  z-index: 2;
+  padding: 0.5rem 0.85rem;
+  font-size: 0.9rem;
+  font-weight: 600;
+  line-height: 1;
+  text-decoration: none;
+  white-space: nowrap;
+  transition: color var(--dur-fast) var(--ease);
+}
+/* расширяем зону клика на паддинг списка, чтобы не было мёртвых полос */
+.pill-nav a::before { content: ""; position: absolute; inset: -0.35rem 0; z-index: 1; }
+
+@media (max-width: 479px) { .pill-nav a { padding: 0.45rem 0.6rem; font-size: 0.8rem; } }
+@media (max-width: 379px) { .pill-nav a { padding: 0.4rem 0.45rem; font-size: 0.74rem; } }
+
+/* Если у устройства нет поддержки прозрачности или пользователь
+   её отключил, даём плотную заливку. */
+@media (prefers-reduced-transparency: reduce) {
+  .pill-nav::before { backdrop-filter: none; -webkit-backdrop-filter: none; }
+}
+
+/* ------------------------------------------------------------
+   5. НИЖНИЙ ДОК с CTA
+   Появляется после первого экрана и сам прячется у настоящей
+   формы, чтобы её не перекрывать.
+   ------------------------------------------------------------ */
+.dock {
+  position: fixed;
+  bottom: clamp(0.8rem, 1.6vw, 1.2rem);
+  left: 0; right: 0;
+  width: min(100% - 1.5rem, 33rem);
+  margin-inline: auto;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 0.45rem 0.45rem 0.45rem 1.25rem;
+  border-radius: 999px;
+  opacity: 0;
+  visibility: hidden;
+  pointer-events: none;
+  transform: translateY(150%);
+  /* visibility с задержкой в длину анимации: элемент уходит из
+     порядка табуляции, но не рвёт плавность */
+  transition: opacity 0.5s var(--ease), transform 0.5s var(--ease), visibility 0s 0.5s;
+}
+.dock.up {
+  opacity: 1;
+  visibility: visible;
+  pointer-events: auto;
+  transform: none;
+  transition-delay: 0s;
+}
+.dock p {
+  margin: 0;
+  min-width: 0;
+  font-size: 0.85rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.dock .btn { flex: none; white-space: nowrap; }
+
+/* Док и пилюля-меню оба живут внизу на мобильном и подрались бы
+   за место. На мобильном показываем только один. */
+@media (max-width: 767px) {
+  .dock { display: none; }
+}
+
+/* ------------------------------------------------------------
+   6. WORD-TICKER для финального CTA
+   Все слова лежат в одной грид-ячейке, показывается активное.
+   ------------------------------------------------------------ */
+.ticker {
+  display: inline-grid;
+  vertical-align: baseline;
+  text-align: left;
+}
+.ticker > span {
+  grid-area: 1 / -1;
+  opacity: 0;
+  transform: translateY(25%);
+  transition: opacity 0.45s var(--ease), transform 0.45s var(--ease);
+}
+.ticker > span.on { opacity: 1; transform: none; }
+
+/* ------------------------------------------------------------
+   7. МАГНИТНЫЕ элементы
+   К курсору быстро, обратно медленно. Асимметрия и есть
+   ощущение «живого» притяжения.
+   ------------------------------------------------------------ */
+.magnetic {
+  transform: translate(var(--mx, 0px), var(--my, 0px));
+  transition: transform var(--dur-fast) var(--ease);
+}
+.magnetic:hover { transition-duration: 0.08s; }
+
+/* ------------------------------------------------------------
+   8. ПОДВАЛ, выезжающий из-под страницы
+   Страница со скруглённым низом отъезжает вглубь, из-под неё
+   выходит подвал. ВАЖНО: пилюля-меню и док обязаны лежать
+   СНАРУЖИ .frame, иначе transform приклеит их к странице.
+   ------------------------------------------------------------ */
+.frame { display: grid; align-items: flex-start; }
+.frame > * { grid-area: 1 / 1; }
+.page-wrap {
+  grid-row: 1;
+  min-width: 0;   /* без этого grid-элемент раздувается шире экрана из-за любого нерастягиваемого длинного слова внутри (напр. sticky-фон в расписании) */
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+  border-radius: 0 0 clamp(24px, 4vw, 52px) clamp(24px, 4vw, 52px);
+  transform-origin: center bottom;
+  transition: transform 0.6s var(--ease-open);
+}
+html.js-anim .page-wrap.lifted { transform: scale(0.955); }
+.footer-twin { grid-row: 2; align-self: stretch; pointer-events: none; }
+.site-footer { grid-row: 2; position: relative; z-index: 0; }
+
+/* ------------------------------------------------------------
+   9. СТОПКА КАРТОЧЕК
+   Каждая карточка в своей строке решётки и липкая с одинаковым
+   отступом сверху: скролл сам наезжает следующей на предыдущую.
+   ВАЖНО: у родителей не должно быть overflow:hidden, иначе sticky
+   молча перестаёт работать. Это причина номер один «почему не липнет».
+   ------------------------------------------------------------ */
+.stack { display: grid; }
+.stack > * {
+  position: sticky;
+  top: var(--stack-top, 12vh);
+  grid-column: 1;
+}
+.stack > *:nth-child(1) { grid-row: 1; }
+.stack > *:nth-child(2) { grid-row: 2; }
+.stack > *:nth-child(3) { grid-row: 3; }
+.stack > *:nth-child(4) { grid-row: 4; }
+.stack > *:nth-child(5) { grid-row: 5; }
+
+/* ------------------------------------------------------------
+   10. ЛИПКАЯ ФОНОВАЯ НАДПИСЬ
+   Огромное слово стоит на месте, контент проезжает поверх.
+   ------------------------------------------------------------ */
+.stickyword {
+  position: sticky;
+  top: 18vh;
+  z-index: 0;
+  pointer-events: none;
+  user-select: none;
+  line-height: 0.82;
+}
+.stickyword + * { position: relative; z-index: 1; }
+
+/* ------------------------------------------------------------
+   11. reduced-motion
+   Не «выключить всё», а убрать движение, сохранив картинку.
+   ------------------------------------------------------------ */
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  html.js-anim [data-anim="rise"] { opacity: 1; transform: none; transition: none; }
+  html.js-anim [data-anim="wipe"] .w-word { --wipe: 1; transition: none; }
+  html.js-anim [data-anim="wipe"] .w-inner { transform: none; transition: none; }
+  html.js-anim .page-wrap.lifted { transform: none; }
+  .magnetic { transform: none; transition: none; }
+  .field i { animation: none; }
+  .ticker > span { transition: none; }
+  .dock { transition: opacity 0.01ms, visibility 0s; }
+}

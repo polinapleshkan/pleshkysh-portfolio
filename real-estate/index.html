@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en" data-theme="sand">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Meridian Properties · Real Estate in Dubai</title>
+  <meta name="description" content="Meridian Properties helps you buy, rent, and invest in Dubai real estate. Live listings, off-plan launches, and agents who answer the phone." />
+  <meta name="theme-color" content="#F2ECDF" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Instrument+Sans:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/motion.css?v=1" />
+  <link rel="stylesheet" href="style.css?v=13" />
+</head>
+<body>
+
+  <div class="field" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+
+  <nav class="pill-nav" aria-label="Primary">
+    <ul>
+      <li><a href="#listings">Listings</a></li>
+      <li><a href="#offplan">Off-Plan</a></li>
+      <li><a href="#areas">Areas</a></li>
+      <li><a href="#team">Team</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+  <div class="dock" data-dock>
+    <p>+971 4 456 7890 · Dubai Marina</p>
+    <a href="#book" class="btn btn-primary btn-sm magnetic">Book a viewing</a>
+  </div>
+
+  <div class="frame">
+    <div class="page-wrap">
+      <main id="top">
+
+        <!-- ============ 1. HERO · sand ============ -->
+        <section class="sec hero" data-theme="deep" data-dock-after>
+          <div class="hero-bg" data-parallax="-10">
+            <!-- Two copies of the same clip. The loop is a slow push-in, so a
+                 plain loop snaps hard back to the wide shot. Instead one copy
+                 crossfades into the other near the end, blending the footage
+                 with itself so nothing foreign ever appears at the seam. -->
+            <video class="hero-bg-video is-on" data-hero-video muted playsinline preload="auto" poster="https://images.unsplash.com/photo-1582120031356-35f21bf61055?auto=format&fit=crop&q=80&w=2000&h=1250" aria-hidden="true">
+              <source src="https://cdn.pixabay.com/video/2024/05/23/213422_small.mp4" type="video/mp4" />
+            </video>
+            <video class="hero-bg-video" data-hero-video muted playsinline preload="auto" aria-hidden="true">
+              <source src="https://cdn.pixabay.com/video/2024/05/23/213422_small.mp4" type="video/mp4" />
+            </video>
+            <img class="hero-bg-img hero-bg-still" src="https://images.unsplash.com/photo-1582120031356-35f21bf61055?auto=format&fit=crop&q=80&w=2000&h=1250" alt="Aerial night view of Downtown Dubai with the Burj Khalifa lit up above the city" loading="eager" fetchpriority="high" />
+            <div class="hero-scrim"></div>
+          </div>
+          <div class="wrap hero-grid">
+            <div class="hero-copy">
+              <div class="hero-meta" data-anim="rise">
+                <span class="label">RERA-licensed brokerage</span>
+                <span class="label">Dubai, UAE</span>
+              </div>
+              <h1 class="display" data-anim="wipe">Find your next address in Dubai.</h1>
+              <p class="lead" data-anim="rise" data-d="2">Buy, rent, or invest with an agent who actually answers the phone. Search live listings and off-plan launches below.</p>
+              <div class="hero-cta" data-anim="rise" data-d="3">
+                <a href="#book" class="btn btn-primary magnetic">Book a viewing</a>
+              </div>
+            </div>
+
+            <div class="search-card" data-anim="rise" data-d="2">
+              <div class="search-tabs" role="tablist" aria-label="Search type">
+                <button class="search-tab is-active" data-search-mode="buy" role="tab" aria-selected="true">Buy</button>
+                <button class="search-tab" data-search-mode="rent" role="tab" aria-selected="false">Rent</button>
+                <button class="search-tab" data-search-mode="offplan" role="tab" aria-selected="false">Off-Plan</button>
+              </div>
+              <form class="search-form" id="searchForm" novalidate>
+                <div class="s-field">
+                  <label for="sArea">Area or building</label>
+                  <input type="text" id="sArea" name="area" placeholder="Dubai Marina, Downtown, JVC..." />
+                </div>
+                <div class="search-row">
+                  <div class="s-field">
+                    <label for="sMin">Min price (AED)</label>
+                    <select id="sMin" name="min">
+                      <option>No min</option>
+                      <option>500,000</option>
+                      <option>1,000,000</option>
+                      <option>2,000,000</option>
+                      <option>5,000,000</option>
+                    </select>
+                  </div>
+                  <div class="s-field">
+                    <label for="sMax">Max price (AED)</label>
+                    <select id="sMax" name="max">
+                      <option>No max</option>
+                      <option>1,000,000</option>
+                      <option>2,000,000</option>
+                      <option>5,000,000</option>
+                      <option>10,000,000</option>
+                    </select>
+                  </div>
+                </div>
+                <button type="submit" class="btn btn-primary btn-block">Search<span class="search-count" data-count-buy="284 for sale" data-count-rent="167 for rent" data-count-offplan="12 off-plan">284 for sale</span></button>
+              </form>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 2. TRUST STATS · deep ============ -->
+        <section class="sec sec-tight stats-sec" data-theme="deep">
+          <div class="wrap">
+            <div class="stats-row" data-anim="rise">
+              <div class="stat"><span class="stat-num">9</span><span class="stat-label">years in business</span></div>
+              <div class="stat"><span class="stat-num">640+</span><span class="stat-label">deals closed</span></div>
+              <div class="stat"><span class="stat-num">34</span><span class="stat-label">agents on the ground</span></div>
+              <div class="stat"><span class="stat-num">4.8</span><span class="stat-label">average rating, out of 5</span></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 3. OFF-PLAN · sand, horizontal scroller ============ -->
+        <section class="sec offplan-sec" id="offplan" data-theme="sand">
+          <div class="wrap">
+            <div class="sec-head-row">
+              <div>
+                <h2 class="display-2" data-anim="wipe">Off-plan projects</h2>
+                <p class="lead" data-anim="rise" data-d="2">New buildings you reserve directly from the developer before construction finishes, usually at a price well below what the same unit costs once it's ready. Every project below comes from an allocation we hold directly with the developer, not a resale of someone else's unit.</p>
+              </div>
+              <div class="carousel-nav">
+                <button class="cbtn" data-scroll="offplanScroll" data-dir="-1" aria-label="Previous">‹</button>
+                <button class="cbtn" data-scroll="offplanScroll" data-dir="1" aria-label="Next">›</button>
+              </div>
+            </div>
+            <div class="scroller" id="offplanScroll">
+              <div class="scroller-inner">
+                <article class="offplan-card" data-anim="rise">
+                  <div class="shot r-4x3"><img src="https://images.pexels.com/photos/19845370/pexels-photo-19845370.jpeg?auto=compress&cs=tinysrgb&w=900&h=675&fit=crop" alt="Azure Bay Residences waterfront tower" loading="lazy" decoding="async" /></div>
+                  <div class="offplan-body">
+                    <h3>Azure Bay Residences</h3>
+                    <p class="offplan-meta">Dubai Creek Harbour · Solace Developments</p>
+                    <p class="offplan-meta">Delivery: Dec 2027</p>
+                    <span class="offplan-price">From AED 980,000</span>
+                  </div>
+                </article>
+                <article class="offplan-card" data-anim="rise" data-d="2">
+                  <div class="shot r-4x3"><img src="https://images.unsplash.com/photo-1682410601904-24ec1d9858e6?auto=format&fit=crop&q=80&w=900&h=675" alt="Palm Vista Villas on Palm Jumeirah" loading="lazy" decoding="async" /></div>
+                  <div class="offplan-body">
+                    <h3>Palm Vista Villas</h3>
+                    <p class="offplan-meta">Palm Jumeirah · Marbella Living</p>
+                    <p class="offplan-meta">Delivery: Jun 2028</p>
+                    <span class="offplan-price">From AED 18,500,000</span>
+                  </div>
+                </article>
+                <article class="offplan-card" data-anim="rise" data-d="3">
+                  <div class="shot r-4x3"><img src="https://images.unsplash.com/photo-1612359002435-ae1bd42be0ef?auto=format&fit=crop&q=80&w=900&h=675" alt="Horizon Business Tower in Business Bay" loading="lazy" decoding="async" /></div>
+                  <div class="offplan-body">
+                    <h3>Horizon Business Tower</h3>
+                    <p class="offplan-meta">Business Bay · Northgate Real Estate</p>
+                    <p class="offplan-meta">Delivery: Mar 2027</p>
+                    <span class="offplan-price">From AED 1,150,000</span>
+                  </div>
+                </article>
+                <article class="offplan-card" data-anim="rise" data-d="4">
+                  <div class="shot r-4x3"><img src="https://images.unsplash.com/photo-1762873493414-3e0b1b73f504?auto=format&fit=crop&q=80&w=900&h=675" alt="Dune Gardens in Dubai South, under construction" loading="lazy" decoding="async" /></div>
+                  <div class="offplan-body">
+                    <h3>Dune Gardens</h3>
+                    <p class="offplan-meta">Dubai South · Vantage Group</p>
+                    <p class="offplan-meta">Delivery: Sep 2028</p>
+                    <span class="offplan-price">From AED 650,000</span>
+                  </div>
+                </article>
+                <article class="offplan-card" data-anim="rise">
+                  <div class="shot r-4x3"><img src="https://images.unsplash.com/photo-1582120042072-d01e2fc8f3ea?auto=format&fit=crop&q=80&w=900&h=675" alt="Marina Point Twin Towers in Dubai Marina" loading="lazy" decoding="async" /></div>
+                  <div class="offplan-body">
+                    <h3>Marina Point Twin Towers</h3>
+                    <p class="offplan-meta">Dubai Marina · Solace Developments</p>
+                    <p class="offplan-meta">Delivery: Feb 2029</p>
+                    <span class="offplan-price">From AED 1,890,000</span>
+                  </div>
+                </article>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 4. FEATURED LISTINGS · sand, bento ============ -->
+        <section class="sec listings-sec" id="listings" data-theme="sand">
+          <div class="wrap">
+            <h2 class="display-2" data-anim="wipe">Featured listings</h2>
+            <p class="lead" data-anim="rise" data-d="2">A mix of what's moving fastest across Dubai right now.</p>
+            <div class="listing-grid">
+              <article class="listing listing-lg" data-anim="rise">
+                <div class="shot r-3x2"><img src="https://images.pexels.com/photos/30554297/pexels-photo-30554297.jpeg?auto=compress&cs=tinysrgb&w=1000&h=666&fit=crop" alt="Two bedroom apartment interior in Dubai Marina" loading="lazy" decoding="async" /></div>
+                <span class="listing-tag tag-sale">For sale</span>
+                <div class="listing-body">
+                  <h3>2 Bed Apartment · Dubai Marina</h3>
+                  <p class="listing-specs">2 bed · 2 bath · 1,180 sqft</p>
+                  <span class="listing-price">AED 2,400,000</span>
+                </div>
+              </article>
+              <article class="listing" data-anim="rise" data-d="2">
+                <div class="shot r-1x1"><img src="https://images.pexels.com/photos/26748006/pexels-photo-26748006.jpeg?auto=compress&cs=tinysrgb&w=700&h=700&fit=crop" alt="Studio apartment interior in Jumeirah Village Circle" loading="lazy" decoding="async" /></div>
+                <span class="listing-tag tag-rent">For rent</span>
+                <div class="listing-body">
+                  <h3>Studio · JVC</h3>
+                  <p class="listing-specs">Studio · 1 bath · 420 sqft</p>
+                  <span class="listing-price">AED 68,000<sub>/yr</sub></span>
+                </div>
+              </article>
+              <article class="listing" data-anim="rise" data-d="3">
+                <div class="shot r-1x1"><img src="https://images.pexels.com/photos/36676879/pexels-photo-36676879.jpeg?auto=compress&cs=tinysrgb&w=700&h=700&fit=crop" alt="Villa with private pool in Arabian Ranches" loading="lazy" decoding="async" /></div>
+                <span class="listing-tag tag-sale">For sale</span>
+                <div class="listing-body">
+                  <h3>4 Bed Villa · Arabian Ranches</h3>
+                  <p class="listing-specs">4 bed · 5 bath · 3,650 sqft</p>
+                  <span class="listing-price">AED 6,800,000</span>
+                </div>
+              </article>
+              <article class="listing" data-anim="rise" data-d="4">
+                <div class="shot r-1x1"><img src="https://images.pexels.com/photos/30876933/pexels-photo-30876933.jpeg?auto=compress&cs=tinysrgb&w=700&h=700&fit=crop" alt="One bedroom apartment interior in Downtown Dubai" loading="lazy" decoding="async" /></div>
+                <span class="listing-tag tag-rent">For rent</span>
+                <div class="listing-body">
+                  <h3>1 Bed Apartment · Downtown</h3>
+                  <p class="listing-specs">1 bed · 1 bath · 810 sqft</p>
+                  <span class="listing-price">AED 145,000<sub>/yr</sub></span>
+                </div>
+              </article>
+              <article class="listing listing-lg" data-anim="rise">
+                <div class="shot r-3x2"><img src="https://images.pexels.com/photos/32418264/pexels-photo-32418264.jpeg?auto=compress&cs=tinysrgb&w=1000&h=666&fit=crop" alt="Penthouse interior in Business Bay" loading="lazy" decoding="async" /></div>
+                <span class="listing-tag tag-sale">For sale</span>
+                <div class="listing-body">
+                  <h3>Penthouse · Business Bay</h3>
+                  <p class="listing-specs">3 bed · 4 bath · 2,240 sqft</p>
+                  <span class="listing-price">AED 5,100,000</span>
+                </div>
+              </article>
+              <article class="listing" data-anim="rise" data-d="2">
+                <div class="shot r-1x1"><img src="https://images.pexels.com/photos/34378029/pexels-photo-34378029.jpeg?auto=compress&cs=tinysrgb&w=700&h=700&fit=crop" alt="Townhouse exterior with pool in Dubai Hills Estate" loading="lazy" decoding="async" /></div>
+                <span class="listing-tag tag-rent">For rent</span>
+                <div class="listing-body">
+                  <h3>3 Bed Townhouse · Dubai Hills</h3>
+                  <p class="listing-specs">3 bed · 3 bath · 2,050 sqft</p>
+                  <span class="listing-price">AED 210,000<sub>/yr</sub></span>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 5. AREAS · deep, drag-to-pan ============ -->
+        <section class="sec areas-sec" id="areas" data-theme="deep">
+          <div class="wrap">
+            <span class="label" data-anim="rise">Where to look</span>
+            <h2 class="display-2" data-anim="wipe">Six neighborhoods worth knowing.</h2>
+            <p class="drag-hint" data-anim="rise" data-d="2">Drag to explore</p>
+          </div>
+          <div class="areas-drag" id="areasDrag">
+            <div class="areas-track">
+              <article class="area-tile">
+                <div class="shot r-3x4"><img src="https://images.unsplash.com/photo-1721801783842-7133fbf11509?auto=format&fit=crop&q=80&w=640&h=850" alt="Dubai Marina waterfront towers" loading="lazy" draggable="false" /></div>
+                <h3>Dubai Marina</h3>
+                <span class="area-count">212 properties</span>
+                <p>Waterfront towers, a promenade that never sleeps.</p>
+              </article>
+              <article class="area-tile">
+                <div class="shot r-3x4"><img src="https://images.pexels.com/photos/38422927/pexels-photo-38422927/free-photo-of-aerial-view-of-palm-jumeirah-in-dubai.jpeg?auto=compress&cs=tinysrgb&w=640&h=850&fit=crop" alt="Palm Jumeirah aerial view" loading="lazy" draggable="false" /></div>
+                <h3>Palm Jumeirah</h3>
+                <span class="area-count">64 properties</span>
+                <p>Villas and branded residences on the water.</p>
+              </article>
+              <article class="area-tile">
+                <div class="shot r-3x4"><img src="https://images.unsplash.com/photo-1651467606797-e1c660cf3fda?auto=format&fit=crop&q=80&w=640&h=850" alt="Downtown Dubai skyline with Burj Khalifa" loading="lazy" draggable="false" /></div>
+                <h3>Downtown Dubai</h3>
+                <span class="area-count">183 properties</span>
+                <p>Burj Khalifa on your doorstep, restaurants below.</p>
+              </article>
+              <article class="area-tile">
+                <div class="shot r-3x4"><img src="https://images.unsplash.com/photo-1643818738490-19931ee82bc9?auto=format&fit=crop&q=80&w=640&h=850" alt="Business Bay canal at night" loading="lazy" draggable="false" /></div>
+                <h3>Business Bay</h3>
+                <span class="area-count">156 properties</span>
+                <p>A short commute, canal views, new towers still rising.</p>
+              </article>
+              <article class="area-tile">
+                <div class="shot r-3x4"><img src="https://images.unsplash.com/photo-1642715350691-7ffde05661c4?auto=format&fit=crop&q=80&w=640&h=850" alt="Jumeirah Village Circle mid-rise apartments" loading="lazy" draggable="false" /></div>
+                <h3>Jumeirah Village Circle</h3>
+                <span class="area-count">241 properties</span>
+                <p>Value for money, parks, a genuine community feel.</p>
+              </article>
+              <article class="area-tile">
+                <div class="shot r-3x4"><img src="https://images.unsplash.com/photo-1721170628992-ddd25faa162e?auto=format&fit=crop&q=80&w=640&h=850" alt="Dubai Hills Estate golf course villas" loading="lazy" draggable="false" /></div>
+                <h3>Dubai Hills Estate</h3>
+                <span class="area-count">97 properties</span>
+                <p>A golf course community, designed for families.</p>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 6. TEAM · sand ============ -->
+        <section class="sec team-sec" id="team" data-theme="sand">
+          <div class="wrap">
+            <span class="label" data-anim="rise">Meet the team</span>
+            <h2 class="display-2" data-anim="wipe">Agents who pick up the phone.</h2>
+            <p class="lead" data-anim="rise" data-d="2">These four lead the desks you'll talk to first. The other thirty cover everything from Dubai South to the Palm.</p>
+            <div class="team-grid">
+              <article class="agent" data-anim="rise">
+                <div class="shot r-1x1"><img src="https://images.unsplash.com/photo-1637589267610-6c66fc2a086b?auto=format&fit=crop&q=80&w=500&h=500" alt="Amelia Foster" loading="lazy" decoding="async" /></div>
+                <h3>Amelia Foster</h3>
+                <p class="agent-role">Waterfront &amp; new developments</p>
+                <span class="agent-lang">English</span>
+              </article>
+              <article class="agent" data-anim="rise" data-d="2">
+                <div class="shot r-1x1"><img src="https://images.unsplash.com/photo-1585846416120-3a7354ed7d39?auto=format&fit=crop&q=80&w=500&h=500" alt="Lucas Meier" loading="lazy" decoding="async" /></div>
+                <h3>Lucas Meier</h3>
+                <p class="agent-role">Off-plan &amp; investment</p>
+                <span class="agent-lang">German, English</span>
+              </article>
+              <article class="agent" data-anim="rise" data-d="3">
+                <div class="shot r-1x1"><img src="https://images.unsplash.com/photo-1699899657680-421c2c2d5064?auto=format&fit=crop&q=80&w=500&h=500" alt="Sofia Ricci" loading="lazy" decoding="async" /></div>
+                <h3>Sofia Ricci</h3>
+                <p class="agent-role">Family homes &amp; rentals</p>
+                <span class="agent-lang">Italian, English</span>
+              </article>
+              <article class="agent" data-anim="rise" data-d="4">
+                <div class="shot r-1x1"><img src="https://images.unsplash.com/photo-1767175620484-1ed37931a0d1?auto=format&fit=crop&q=80&w=500&h=500" alt="Dimitri Volkov" loading="lazy" decoding="async" /></div>
+                <h3>Dimitri Volkov</h3>
+                <p class="agent-role">Luxury villas &amp; Palm Jumeirah</p>
+                <span class="agent-lang">Russian, English</span>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 7. TESTIMONIALS · deep ============ -->
+        <section class="sec revs-sec" data-theme="deep">
+          <div class="wrap">
+            <span class="label" data-anim="rise">What clients say</span>
+            <h2 class="display-2" data-anim="wipe">In their own words.</h2>
+            <div class="revs">
+              <figure class="rev" data-anim="rise">
+                <div class="rev-stars" aria-label="5 out of 5">★★★★★</div>
+                <blockquote>Amelia found us a two-bedroom apartment in Dubai Marina in under three weeks and negotiated the price down twice.</blockquote>
+                <figcaption><span class="rev-name">Rachel Kingston</span><span class="rev-role">Bought in Dubai Marina with Amelia Foster</span></figcaption>
+              </figure>
+              <figure class="rev" data-anim="rise" data-d="2">
+                <div class="rev-stars" aria-label="5 out of 5">★★★★★</div>
+                <blockquote>Lucas walked us through the off-plan paperwork step by step and answered messages on weekends too.</blockquote>
+                <figcaption><span class="rev-name">Youssef Haidar</span><span class="rev-role">Invested in Dubai Creek Harbour with Lucas Meier</span></figcaption>
+              </figure>
+              <figure class="rev" data-anim="rise" data-d="3">
+                <div class="rev-stars" aria-label="4 out of 5">★★★★☆</div>
+                <blockquote>Sofia understood exactly what we needed for the school run and found it within a week. The move-in took a bit longer than promised.</blockquote>
+                <figcaption><span class="rev-name">Meera Chandran</span><span class="rev-role">Rented in JVC with Sofia Ricci</span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 8. CTA SPLIT · sand ============ -->
+        <section class="sec cta-sec" data-theme="sand">
+          <div class="wrap cta-split-grid">
+            <article class="cta-path" data-anim="rise">
+              <h3>Buying or investing?</h3>
+              <p>Browse live listings and off-plan launches, or tell an agent exactly what you're after.</p>
+              <a href="#listings" class="btn btn-ghost">Browse listings</a>
+            </article>
+            <article class="cta-path" data-anim="rise" data-d="2">
+              <h3>Selling or renting out?</h3>
+              <p>Get a free valuation and a shortlist of buyers or tenants already looking in your area. For landlords who'd rather not deal with tenants directly, we also handle rent collection and maintenance requests after the lease is signed.</p>
+              <a href="#contact" class="btn btn-ghost">Request a valuation</a>
+            </article>
+          </div>
+        </section>
+
+        <!-- ============ 9. BOOK A VIEWING · sand, date/time widget ============ -->
+        <section class="sec book-sec" id="book" data-theme="sand" data-dock-stop>
+          <div class="wrap book-grid">
+            <div class="book-copy" data-anim="rise">
+              <h2 class="display-2" data-anim="wipe">Pick a day that works.</h2>
+              <p class="lead">Choose a day and a time, and an agent will call you to confirm.</p>
+            </div>
+            <div class="book-widget" data-anim="rise" data-d="2">
+              <div class="book-days" id="bookDays" role="tablist" aria-label="Choose a day"></div>
+              <div class="book-slots" id="bookSlots" role="tablist" aria-label="Choose a time"></div>
+              <div class="book-footer">
+                <p class="book-summary" id="bookSummary">Select a day and a time above.</p>
+                <button type="button" class="btn btn-primary" id="bookConfirm" disabled>Confirm viewing</button>
+              </div>
+              <div class="book-success" id="bookSuccess" hidden>
+                <svg class="book-check" viewBox="0 0 52 52" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="none" /><path fill="none" d="M14 27l7 7 17-17" /></svg>
+                <p><strong id="bookSuccessLine">Booked.</strong> We'll call to confirm.</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 10. CONTACT · deep ============ -->
+        <section class="sec contact-sec" id="contact" data-theme="deep">
+          <div class="wrap contact-grid">
+            <div class="contact-info" data-anim="rise">
+              <span class="label">Contact</span>
+              <ul class="loc-list">
+                <li><span>Office</span><span>Office 1204, Marina Plaza, Dubai Marina, Dubai, UAE</span></li>
+                <li><span>Phone</span><a href="tel:+97144567890">+971 4 456 7890</a></li>
+                <li><span>Email</span><a href="mailto:hello@meridianproperties.ae">hello@meridianproperties.ae</a></li>
+                <li><span>Hours</span><span>9:00 AM-7:00 PM, Sat-Thu</span></li>
+                <li><span>License</span><span>RERA ORN 24681</span></li>
+              </ul>
+              <a class="wa-btn" href="https://wa.me/971501234567?text=Hi! I'd like to book a viewing with Meridian Properties." target="_blank" rel="noopener">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12.02 2c-5.5 0-9.98 4.48-9.98 9.98 0 1.76.46 3.48 1.34 4.99L2 22l5.19-1.36a9.94 9.94 0 0 0 4.83 1.23h.01c5.5 0 9.98-4.48 9.98-9.98S17.53 2 12.02 2Zm5.85 14.28c-.25.7-1.45 1.34-2 1.42-.51.08-1.15.11-1.86-.12-.43-.13-.98-.32-1.68-.63-2.96-1.28-4.89-4.25-5.04-4.45-.15-.2-1.21-1.6-1.21-3.06s.77-2.16 1.04-2.46c.27-.3.6-.37.8-.37h.57c.18 0 .43-.07.67.51.25.6.85 2.07.92 2.22.07.15.12.33.02.53-.1.2-.15.32-.3.5-.15.17-.31.39-.44.52-.15.15-.3.31-.13.6.17.3.76 1.25 1.63 2.02 1.12.99 2.06 1.3 2.36 1.45.3.15.47.12.65-.08.17-.2.73-.85.93-1.14.2-.3.4-.25.66-.15.27.1 1.73.82 2.02.97.3.15.5.22.57.34.07.13.07.72-.18 1.42Z"/></svg>
+                <span>WhatsApp us</span>
+              </a>
+            </div>
+            <div class="contact-map" data-anim="rise" data-d="2">
+              <div class="map-block">
+                <iframe class="map-frame" src="https://www.google.com/maps?q=Dubai+Marina,+Dubai&output=embed" loading="lazy" title="Meridian Properties on the map" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                <a class="map-cta" href="https://www.google.com/maps/dir/?api=1&destination=Dubai+Marina%2C+Dubai" target="_blank" rel="noopener">
+                  <svg class="pin-icon" viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M12 2C7.6 2 4 5.6 4 10c0 5.4 7 11.5 7.3 11.7a1 1 0 0 0 1.4 0C13 21.5 20 15.4 20 10c0-4.4-3.6-8-8-8Zm0 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6Z"/></svg>
+                  Get directions
+                </a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 11. FAQ · sand ============ -->
+        <section class="sec sec-tight faq-sec" data-theme="sand">
+          <div class="wrap">
+            <span class="label" data-anim="rise">Questions</span>
+            <h2 class="display-2" data-anim="wipe">Before you ask.</h2>
+            <div class="faq-list" data-anim="rise" data-d="2">
+              <details class="faq-item">
+                <summary>Can foreigners buy property in Dubai?</summary>
+                <p>Yes. In designated freehold areas, which cover Dubai Marina, Downtown, Business Bay, and most of the neighborhoods we list, foreign nationals can own property outright, with full title registered at the Dubai Land Department.</p>
+              </details>
+              <details class="faq-item">
+                <summary>How does buying off-plan actually work?</summary>
+                <p>You reserve a unit with a booking deposit, then pay the rest in installments tied to construction milestones set by the developer. Most launches ask for 10-20% upfront, with the balance paid over the build period and the final payment due on handover.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Do you charge a commission?</summary>
+                <p>For resale purchases, the standard agency fee in Dubai is 2% of the sale price, paid by the buyer on completion. Off-plan reservations are commission-free for you, since the developer pays us directly.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Is there tax on the property or the rental income?</summary>
+                <p>No income tax on rent and no capital gains tax on resale. It's one of the reasons Dubai keeps attracting overseas buyers.</p>
+              </details>
+              <details class="faq-item">
+                <summary>Do you help with financing?</summary>
+                <p>We're not a bank, but we can put you in front of mortgage brokers we trust and tell you honestly whether a project is likely to get financed before you commit a deposit.</p>
+              </details>
+              <details class="faq-item">
+                <summary>What if I can't view in person?</summary>
+                <p>We do live video walkthroughs via WhatsApp or a phone call, and can send extra photos or floor plans of anything listed on our website. Several of our clients bought without setting foot in Dubai before handover.</p>
+              </details>
+              <details class="faq-item">
+                <summary>How do I book a viewing?</summary>
+                <p>Pick a day and a time in the booking widget above, or message us directly on WhatsApp. An agent will call you to confirm.</p>
+              </details>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <div class="footer-twin" aria-hidden="true"></div>
+
+    <!-- ============ FOOTER · deep ============ -->
+    <footer class="site-footer" data-theme="deep">
+      <div class="wrap">
+        <div class="foot-word">MERIDIAN</div>
+
+        <div class="foot-grid">
+          <div class="foot-col">
+            <span class="foot-h">Explore</span>
+            <a href="#listings">Listings</a>
+            <a href="#offplan">Off-Plan</a>
+            <a href="#areas">Areas</a>
+            <a href="#team">Team</a>
+          </div>
+          <div class="foot-col">
+            <span class="foot-h">Contact</span>
+            <a class="foot-contact" href="https://wa.me/971501234567" target="_blank" rel="noopener"><span class="ci">WhatsApp</span><span>+971 50 123 4567</span></a>
+            <a class="foot-contact" href="tel:+97144567890"><span class="ci">Phone</span><span>+971 4 456 7890</span></a>
+            <a class="foot-contact" href="mailto:hello@meridianproperties.ae"><span class="ci">Email</span><span>hello@meridianproperties.ae</span></a>
+          </div>
+          <div class="foot-col">
+            <span class="foot-h">Legal</span>
+            <span>Meridian Properties Real Estate Brokers LLC</span>
+            <span>Trade License No. 987654</span>
+            <span>RERA ORN 24681</span>
+          </div>
+        </div>
+
+        <div class="foot-bottom">
+          <span>© 2026 Meridian Properties. A portfolio demo, not a real business.</span>
+          <span>Real estate brokerage, Dubai</span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script defer src="shared/vendor/gsap.min.js"></script>
+  <script defer src="shared/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="script.js?v=6"></script>
+  <script defer src="shared/motion.js"></script>
+</body>
+</html>

@@ -1,0 +1,493 @@
+/* ============================================================
+   Harmony — студия пилатеса, Дубай
+   Композиция: полноэкранные цветовые блоки, страница
+   перекрашивается при прокрутке. Типографика плакатная:
+   мелкая подпись 12px и сразу дисплей до 150px, между ними пусто.
+   Шрифты: Oswald (дисплей) / Manrope (текст) / Caveat (подпись)
+   ============================================================ */
+
+@layer tokens, base, layout, components, responsive;
+
+/* ------------------------------------------------------------ */
+@layer tokens {
+  :root {
+    /* Палитра блоков. Четыре цвета в осознанном ритме:
+       бумага → лес → глина → бумага → чернила → глина → чернила */
+    --paper:  #F2EADE;
+    --forest: #2B3A2B;
+    --clay:   #C2542F;
+    --ink:    #16130F;
+
+    --font-display: "Oswald", "Arial Narrow", sans-serif;
+    --font-body: "Manrope", system-ui, sans-serif;
+    --font-script: "Caveat", cursive;
+
+    /* Разрыв шкалы: между подписью и дисплеем ничего нет */
+    --t-label: 0.74rem;
+    --t-body: 1.06rem;
+    --t-lead: clamp(1.15rem, 1.8vw, 1.5rem);
+    --t-display: clamp(2.9rem, 9.6vw, 8rem);
+    --t-display-2: clamp(2.3rem, 6vw, 4.8rem);
+
+    --wrap: 1280px;
+    --r: 4px;          /* одна система скруглений: почти острые углы */
+    --r-pill: 999px;
+
+    /* активная тема, значения приходят из блоков ниже */
+    --bg: var(--paper);
+    --fg: #211C15;
+    --fg-soft: rgba(33, 28, 21, 0.66);
+    --accent: var(--clay);
+    --line: rgba(33, 28, 21, 0.16);
+  }
+
+  /* Наборы тем. Работают и на секции, и на <html> для шапки. */
+  [data-theme="paper"] {
+    --bg: #F2EADE;
+    --fg: #211C15;
+    --fg-soft: rgba(33, 28, 21, 0.66);
+    --accent: #C2542F;
+    --line: rgba(33, 28, 21, 0.16);
+  }
+  [data-theme="forest"] {
+    --bg: #2B3A2B;
+    --fg: #EFEDE0;
+    --fg-soft: rgba(239, 237, 224, 0.66);
+    --accent: #CBD9B0;
+    --line: rgba(239, 237, 224, 0.2);
+  }
+  [data-theme="clay"] {
+    --bg: #C2542F;
+    --fg: #FDF2E6;
+    --fg-soft: rgba(253, 242, 230, 0.78);
+    --accent: #2B3A2B;
+    --line: rgba(253, 242, 230, 0.28);
+  }
+  [data-theme="ink"] {
+    --bg: #16130F;
+    --fg: #F0E9DD;
+    --fg-soft: rgba(240, 233, 221, 0.62);
+    --accent: #E07A4C;
+    --line: rgba(240, 233, 221, 0.16);
+  }
+}
+
+/* ------------------------------------------------------------ */
+@layer base {
+  * { box-sizing: border-box; }
+  html {
+    scroll-behavior: smooth;
+    background: var(--bg);
+    transition: background-color 0.7s var(--ease);
+  }
+
+  body {
+    margin: 0;
+    background: transparent;
+    color: var(--fg-soft);
+    font-family: var(--font-body);
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+    /* Именно clip, а не hidden: hidden делает body контейнером
+       прокрутки и молча убивает position:sticky у стопки карточек. */
+    overflow-x: clip;
+  }
+
+  img { max-width: 100%; display: block; }
+  ul { margin: 0; padding: 0; list-style: none; }
+  p { margin: 0; }
+  a { color: inherit; }
+  button { font-family: inherit; }
+
+  h1, h2, h3 {
+    margin: 0;
+    font-family: var(--font-display);
+    font-weight: 600;
+    color: var(--fg);
+    text-transform: uppercase;
+    letter-spacing: -0.005em;
+    line-height: 0.88;      /* строки почти касаются */
+  }
+
+  .script {
+    font-family: var(--font-script);
+    font-weight: 700;
+    text-transform: none;
+    letter-spacing: 0;
+    color: var(--accent);
+  }
+
+  ::selection { background: var(--accent); color: var(--bg); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 4px; }
+}
+
+/* ------------------------------------------------------------ */
+@layer layout {
+  .wrap { max-width: var(--wrap); margin: 0 auto; padding: 0 28px; }
+  /* Блок во всю ширину экрана, без ограничения контейнером */
+  .bleed { width: 100%; padding: 0 28px; }
+
+  /* Каждая секция это цветной блок на всю ширину */
+  .sec {
+    background: var(--bg);
+    color: var(--fg-soft);
+    padding: clamp(76px, 11vw, 150px) 0;
+    position: relative;
+  }
+  .sec-tight { padding: clamp(52px, 7vw, 92px) 0; }
+
+  /* Мелкая подпись. Второй полюс шкалы. */
+  .label {
+    display: block;
+    font-family: var(--font-body);
+    font-size: var(--t-label);
+    font-weight: 700;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--fg-soft);
+  }
+
+  .display { font-size: var(--t-display); }
+  .display-2 { font-size: var(--t-display-2); }
+  .lead { font-size: var(--t-lead); line-height: 1.42; color: var(--fg-soft); max-width: 30ch; }
+}
+
+/* ------------------------------------------------------------ */
+@layer components {
+
+  /* ---------- Кнопки ---------- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 16px 30px;
+    border-radius: var(--r-pill);
+    border: 1px solid transparent;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: background 0.25s var(--ease), color 0.25s var(--ease),
+                border-color 0.25s var(--ease);
+  }
+  .btn-primary { background: var(--fg); color: var(--bg); }
+  .btn-primary:hover { background: var(--accent); color: var(--bg); }
+  .btn-ghost { border-color: var(--line); color: var(--fg); }
+  .btn-ghost:hover { border-color: var(--fg); }
+  .btn-sm { padding: 11px 22px; font-size: 0.78rem; }
+
+  /* ---------- Пилюля-меню и док, подстраиваются под тему ---------- */
+  .pill-nav::before { background: color-mix(in srgb, var(--bg) 74%, transparent); }
+  .pill-nav a { color: var(--fg-soft); font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; font-size: 0.76rem; }
+  .pill-nav a:hover, .pill-nav a.on { color: var(--fg); }
+  .pill-nav .pill-lang {
+    display: flex; align-items: center; gap: 3px;
+    padding: 0.5rem 0.7rem;
+    background: none; border: none;
+    border-left: 1px solid var(--line);
+    margin-left: 0.2rem;
+    font-size: 0.7rem; font-weight: 700; letter-spacing: 0.08em;
+    color: var(--fg-soft); cursor: pointer; position: relative; z-index: 2;
+  }
+  .pill-lang .lang-opt.active { color: var(--accent); }
+  .pill-lang .lang-sep { opacity: 0.4; }
+
+  .dock { background: var(--fg); color: var(--bg); }
+  .dock p { color: color-mix(in srgb, var(--bg) 76%, transparent); font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; font-size: 0.72rem; }
+  .dock .btn-primary { background: var(--accent); color: var(--bg); }
+  .dock .btn-primary:hover { background: var(--bg); color: var(--fg); }
+
+  /* ---------- Поле фона: мягкое свечение под цвет темы ---------- */
+  .field .b1 { width: 60vw; height: 60vw; left: -20vw; top: -14vw; background: var(--accent); opacity: 0.1; }
+  .field .b2 { width: 50vw; height: 50vw; right: -18vw; top: 30vh; background: var(--fg); opacity: 0.06; }
+  .field .b3 { width: 46vw; height: 46vw; left: 30vw; bottom: -16vw; background: var(--accent); opacity: 0.08; }
+
+  /* ---------- Картинки ---------- */
+  .shot { position: relative; overflow: hidden; border-radius: var(--r); background: color-mix(in srgb, var(--fg) 8%, transparent); }
+  .shot img { width: 100%; height: 100%; object-fit: cover; }
+  .r-3x4 { aspect-ratio: 3 / 4; }
+  .r-4x5 { aspect-ratio: 4 / 5; }
+  .r-1x1 { aspect-ratio: 1 / 1; }
+  .r-16x9 { aspect-ratio: 16 / 9; }
+
+  /* ---------- HERO ---------- */
+  /* Слово разорвано по краям экрана, фото стоит между половинками */
+  /* Первый экран обязан помещаться целиком: заголовок, подзаголовок
+     и кнопка должны быть видны без прокрутки. Отсюда сдержанные
+     отступы и квадратное фото вместо вертикального. */
+  .hero { padding: clamp(88px, 10vw, 116px) 0 clamp(48px, 6vw, 84px); }
+  .hero-meta {
+    display: flex; flex-wrap: wrap; gap: 8px 26px;
+    margin-bottom: clamp(22px, 3vw, 38px);
+  }
+  .hero-line-1 { display: block; }
+  .hero-mid {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) clamp(130px, 14vw, 200px);
+    align-items: center;
+    gap: clamp(18px, 2.6vw, 38px);
+    margin: 0.02em 0;
+  }
+  .hero-mid .display { text-align: right; }
+  .hero-photo { position: relative; }
+  .hero-photo .script {
+    position: absolute;
+    left: -18px; bottom: -14px;
+    font-size: 1.7rem;
+    background: var(--bg);
+    padding: 2px 12px;
+    border-radius: var(--r-pill);
+  }
+  .hero-foot {
+    display: flex; flex-wrap: wrap; align-items: flex-end;
+    justify-content: space-between; gap: 26px;
+    margin-top: clamp(24px, 3vw, 42px);
+  }
+  .hero-cta { display: flex; gap: 12px; flex-wrap: wrap; }
+
+  /* ---------- МАНИФЕСТ ---------- */
+  /* Только типографика, ни одной картинки. Пауза после героя. */
+  .manifesto .label { margin-bottom: clamp(24px, 3.5vw, 44px); }
+  .manifesto-text {
+    font-family: var(--font-display);
+    font-weight: 500;
+    text-transform: uppercase;
+    font-size: clamp(1.7rem, 4.2vw, 3.4rem);
+    line-height: 1.06;
+    color: var(--fg);
+    max-width: 20ch;
+  }
+  .manifesto-text em { font-style: normal; color: var(--accent); }
+  .manifesto-note { margin-top: clamp(26px, 3.5vw, 44px); max-width: 44ch; }
+
+  /* ---------- НАПРАВЛЕНИЯ: стопка карточек ---------- */
+  .classes-head {
+    display: flex; align-items: flex-end; justify-content: space-between;
+    gap: 24px; flex-wrap: wrap;
+    margin-bottom: clamp(30px, 4vw, 56px);
+  }
+  .stack { --stack-top: 14vh; }
+  .cls {
+    /* чуть светлее фона секции, чтобы стопка читалась слоями */
+    background: color-mix(in srgb, var(--bg) 90%, var(--fg));
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    padding: clamp(20px, 2.4vw, 32px);
+    margin-bottom: 22px;
+    display: grid;
+    grid-template-columns: clamp(180px, 24vw, 340px) minmax(0, 1fr);
+    gap: clamp(22px, 3vw, 48px);
+    align-items: center;
+    /* карточка непрозрачна, иначе стопка просвечивает */
+    box-shadow: 0 -1px 0 var(--line);
+  }
+  .cls-num {
+    font-family: var(--font-display);
+    font-size: 0.8rem;
+    letter-spacing: 0.18em;
+    color: var(--accent);
+  }
+  .cls h3 { font-size: clamp(1.9rem, 4.4vw, 3.4rem); margin: 10px 0 14px; }
+  .cls p { max-width: 34ch; }
+
+  /* ---------- РАСПИСАНИЕ: липкая фоновая надпись ---------- */
+  .sched-stage { position: relative; }
+  .stickyword {
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: clamp(4.5rem, 17vw, 15rem);
+    color: var(--fg);
+    opacity: 0.07;
+    letter-spacing: -0.01em;
+    margin-bottom: -0.42em;   /* строки таблицы наезжают на надпись */
+    max-width: 100%;
+    overflow: hidden;   /* длинное слово не должно раздувать .frame-грид на всю страницу */
+    white-space: nowrap;
+  }
+  .tt { border-top: 1px solid var(--line); }
+  .tt-row {
+    display: grid;
+    grid-template-columns: 74px repeat(6, minmax(0, 1fr));
+    gap: 8px;
+    align-items: center;
+    padding: 12px 0;
+    border-bottom: 1px solid var(--line);
+  }
+  .tt-head { padding: 10px 0; }
+  .tt-head span { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-soft); }
+  .tt-time { font-size: 0.82rem; font-weight: 700; color: var(--fg); }
+  .cell {
+    display: flex; align-items: center; justify-content: center;
+    padding: 9px 4px;
+    border-radius: var(--r-pill);
+    font-size: 0.72rem; font-weight: 700;
+    letter-spacing: 0.04em; text-transform: uppercase;
+    text-align: center; line-height: 1.2;
+  }
+  .c-ref { background: color-mix(in srgb, var(--accent) 90%, transparent); color: var(--bg); }
+  .c-yog { background: color-mix(in srgb, var(--fg) 14%, transparent); color: var(--fg); }
+  .c-str { background: transparent; border: 1px solid var(--line); color: var(--fg-soft); }
+  .c-non { color: var(--line); }
+  .tt-legend { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 22px; }
+  .lg { display: flex; align-items: center; gap: 9px; font-size: 0.8rem; }
+  .lg i { width: 12px; height: 12px; border-radius: 50%; }
+  .lg .c-ref { background: var(--accent); }
+  .lg .c-yog { background: color-mix(in srgb, var(--fg) 45%, transparent); }
+  .lg .c-str { border: 1px solid var(--fg-soft); background: none; }
+
+  /* ---------- АБОНЕМЕНТЫ: не три карточки, а строки с крупной ценой ---------- */
+  .plans { border-top: 1px solid var(--line); margin-top: clamp(30px, 4vw, 54px); }
+  .plan {
+    display: grid;
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.4fr) auto;
+    gap: clamp(18px, 3vw, 48px);
+    align-items: center;
+    padding: clamp(22px, 3vw, 40px) 0;
+    border-bottom: 1px solid var(--line);
+    transition: padding-left 0.4s var(--ease);
+  }
+  .plan:hover { padding-left: 12px; }
+  .plan-name { font-family: var(--font-display); font-weight: 600; text-transform: uppercase; font-size: clamp(1.3rem, 2.4vw, 2rem); color: var(--fg); line-height: 1; }
+  .plan-note { font-size: 0.95rem; max-width: 34ch; }
+  .plan-price {
+    font-family: var(--font-display);
+    font-weight: 600;
+    font-size: clamp(2.4rem, 5.4vw, 4.4rem);
+    color: var(--fg);
+    line-height: 0.9;
+    white-space: nowrap;
+  }
+  .plan-price sup { font-size: 0.26em; font-weight: 700; vertical-align: super; letter-spacing: 0.1em; color: var(--fg-soft); margin-right: 6px; }
+  .plan-flag {
+    display: inline-block;
+    margin-left: 12px;
+    padding: 4px 11px;
+    border-radius: var(--r-pill);
+    background: var(--accent);
+    color: var(--bg);
+    font-family: var(--font-body);
+    font-size: 0.62rem; font-weight: 700;
+    letter-spacing: 0.1em; text-transform: uppercase;
+    vertical-align: middle;
+  }
+
+  /* ---------- ОТЗЫВЫ ---------- */
+  .revs { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(16px, 2vw, 28px); margin-top: clamp(30px, 4vw, 54px); }
+  .rev {
+    margin: 0;
+    padding: clamp(22px, 2.6vw, 34px);
+    border: 1px solid var(--line);
+    border-radius: var(--r);
+    background: color-mix(in srgb, var(--fg) 4%, transparent);
+  }
+  .rev:nth-child(2) { transform: translateY(22px); }
+  .rev-stars { color: var(--accent); letter-spacing: 3px; font-size: 0.8rem; }
+  .rev blockquote { margin: 14px 0 18px; font-size: 1.02rem; line-height: 1.5; color: var(--fg); }
+  .rev figcaption { display: flex; flex-direction: column; gap: 2px; }
+  .rev-name { font-weight: 700; color: var(--fg); font-size: 0.9rem; }
+  .rev-role { font-size: 0.78rem; }
+
+  /* ---------- ЛОКАЦИЯ ---------- */
+  .loc-grid { display: grid; grid-template-columns: 0.9fr 1.1fr; gap: clamp(30px, 5vw, 72px); align-items: center; }
+  .loc-list { margin: clamp(24px, 3vw, 40px) 0; border-top: 1px solid var(--line); }
+  .loc-list li {
+    display: grid; grid-template-columns: 130px 1fr; gap: 16px;
+    padding: 15px 0; border-bottom: 1px solid var(--line);
+    font-size: 0.96rem;
+  }
+  .loc-list li span:first-child { font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase; color: var(--fg-soft); }
+  .loc-list li span:last-child { color: var(--fg); }
+  .loc-photo { position: relative; }
+  .loc-photo .script {
+    position: absolute; right: -14px; bottom: 24px;
+    font-size: 1.6rem; background: var(--bg);
+    padding: 6px 20px; border-radius: var(--r-pill);
+  }
+
+  /* ---------- ФИНАЛЬНЫЙ CTA ---------- */
+  .final { text-align: left; }
+  .cta-line {
+    display: block;
+    text-decoration: none;
+    font-family: var(--font-display);
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: var(--t-display);
+    line-height: 0.9;
+    color: var(--fg);
+  }
+  .cta-line .ticker > span { font-family: var(--font-script); text-transform: none; color: var(--accent); font-size: 1.1em; }
+  .cta-arrow { display: inline-block; transition: transform 0.4s var(--ease); }
+  .cta-line:hover .cta-arrow { transform: translate(0.16em, -0.08em); }
+  .final-foot { display: flex; flex-wrap: wrap; gap: 20px 40px; align-items: center; margin-top: clamp(28px, 4vw, 48px); }
+
+  /* ---------- ПОДВАЛ ---------- */
+  .site-footer { background: var(--bg); color: var(--fg-soft); padding: clamp(56px, 8vw, 96px) 0 28px; }
+  .foot-word {
+    font-family: var(--font-display);
+    font-weight: 600; text-transform: uppercase;
+    font-size: clamp(3.4rem, 15vw, 13rem);
+    line-height: 0.8;
+    color: var(--fg);
+    margin-bottom: clamp(30px, 4vw, 56px);
+  }
+  .foot-grid { display: grid; grid-template-columns: 1.4fr 1fr 1fr; gap: 34px; padding-bottom: 30px; border-bottom: 1px solid var(--line); }
+  .foot-col { display: flex; flex-direction: column; gap: 9px; }
+  .foot-h { font-size: 0.7rem; font-weight: 700; letter-spacing: 0.16em; text-transform: uppercase; color: var(--fg-soft); margin-bottom: 5px; }
+  .foot-col a { text-decoration: none; font-size: 0.92rem; color: var(--fg); transition: color 0.2s var(--ease); }
+  .foot-col a:hover { color: var(--accent); }
+  .foot-contact { display: flex; flex-direction: column; }
+  .foot-contact .ci { font-size: 0.68rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--fg-soft); }
+  .foot-bottom { display: flex; justify-content: space-between; align-items: center; gap: 16px; margin-top: 22px; font-size: 0.78rem; }
+  .foot-made { font-family: var(--font-script); font-size: 1.1rem; color: var(--accent); }
+}
+
+/* ------------------------------------------------------------ */
+@layer responsive {
+  @media (max-width: 1000px) {
+    .cls { grid-template-columns: 1fr; }
+    .cls .shot { max-width: 300px; }
+    .loc-grid { grid-template-columns: 1fr; }
+    .revs { grid-template-columns: 1fr; }
+    .rev:nth-child(2) { transform: none; }
+    .plan { grid-template-columns: 1fr auto; }
+    .plan-note { grid-column: 1 / -1; order: 3; }
+    .foot-grid { grid-template-columns: 1fr 1fr; }
+  }
+
+  @media (max-width: 760px) {
+    body { font-size: 16px; }
+    .hero-mid { grid-template-columns: 1fr; }
+    .hero-mid .display { text-align: left; }
+    .hero-photo { max-width: 230px; }
+    .stack { --stack-top: 8vh; }
+    /* Расписание листается вбок, а не сжимается в кашу */
+    .sched-scroll { overflow-x: auto; scrollbar-width: none; }
+    .sched-scroll::-webkit-scrollbar { display: none; }
+    .tt { min-width: 640px; }
+    .foot-grid { grid-template-columns: 1fr; gap: 26px; }
+    /* место под пилюлю-меню внизу экрана */
+    .site-footer { padding-bottom: calc(92px + env(safe-area-inset-bottom, 0px)); }
+  }
+
+  @media (max-width: 480px) {
+    .wrap, .bleed { padding: 0 18px; }
+    .hero-cta { width: 100%; }
+    .hero-cta .btn { flex: 1; }
+    .loc-list li { grid-template-columns: 1fr; gap: 3px; }
+    .foot-bottom { flex-direction: column; align-items: flex-start; }
+    .plan { grid-template-columns: 1fr; }
+    .plan-price { font-size: clamp(2.6rem, 14vw, 3.4rem); }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html { transition: none; }
+    .btn, .plan, .cta-arrow { transition: none; }
+  }
+}

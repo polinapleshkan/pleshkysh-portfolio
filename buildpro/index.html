@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="ru" data-theme="navy">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>BuildPro. Строительная компания</title>
+  <meta name="description" content="BuildPro строит дома, бани и коммерческие объекты под ключ. Свой инженерный отдел, честная смета, гарантия на все работы." />
+  <meta name="theme-color" content="#101825" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&family=PT+Sans+Narrow:wght@700;900&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/motion.css?v=1" />
+  <link rel="stylesheet" href="style.css?v=11" />
+</head>
+<body>
+
+  <nav class="pill-nav" aria-label="Основное">
+    <ul>
+      <li><a href="#about">О компании</a></li>
+      <li><a href="#services">Услуги</a></li>
+      <li><a href="#projects">Проекты</a></li>
+      <li><a href="#process">Как мы работаем</a></li>
+      <li><a href="#contact">Контакты</a></li>
+    </ul>
+  </nav>
+
+  <div class="dock" data-dock>
+    <a class="dock-phone" href="tel:+74951234567">+7 (495) 123-45-67</a>
+    <a href="#lead" class="btn btn-primary btn-sm magnetic">Оставить заявку</a>
+  </div>
+
+  <div class="frame">
+    <div class="page-wrap">
+      <main id="top">
+
+        <!-- ============ HERO · navy ============ -->
+        <section class="sec hero" data-theme="navy" data-dock-after>
+          <div class="wrap hero-grid">
+            <div class="hero-copy" data-anim="rise">
+              <span class="chip"><i class="dot"></i>Строим с 2014 года</span>
+              <h1 class="hero-title"><span class="hammer-wrap"><span class="hammer-word">Строим</span><img class="hammer-icon" src="assets/hammer.png" alt="" aria-hidden="true" /></span> дома, которые служат десятилетиями.</h1>
+              <p class="hero-sub">Свой инженерный отдел, фиксированная смета и гарантия на каждый этап работ.</p>
+              <div class="hero-cta">
+                <a href="#lead" class="btn btn-primary magnetic">Оставить заявку</a>
+                <a href="#projects" class="btn btn-ghost">Смотреть проекты</a>
+              </div>
+            </div>
+            <div class="hero-visual" data-anim="rise" data-d="2">
+              <div class="img-slot ratio-4x5 lens-target" id="heroLens"><img src="assets/hero.jpg" alt="Современный дом, построенный компанией" loading="lazy"></div>
+              <div class="hero-badge">
+                <span class="hero-badge-num">312</span>
+                <span class="hero-badge-label">объектов сдано</span>
+                <span class="hero-badge-shape" aria-hidden="true"></span>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ WHAT WE BUILD · cream ============ -->
+        <section class="sec categories" id="categories" data-theme="cream">
+          <div class="wrap cat-layout">
+            <div class="sec-head">
+              <h2 class="sec-title" data-anim="wipe">Что мы строим</h2>
+              <p class="cat-hint" data-anim="rise" data-d="2">Смахните фото в сторону или листайте стрелками</p>
+            </div>
+            <div class="cat-stack-col">
+              <div class="cat-stack" id="catStack">
+                <article class="cat" data-cat-card>
+                  <div class="img-slot ratio-4x5"><img src="assets/cat-houses.jpg" alt="Частный дом под ключ" loading="lazy"></div>
+                  <div class="cat-body">
+                    <h3>Дома</h3>
+                    <p>Каркасные, брусовые и кирпичные дома под ключ, с гарантией и соблюдением сроков.</p>
+                  </div>
+                </article>
+                <article class="cat" data-cat-card>
+                  <div class="img-slot ratio-4x5"><img src="assets/cat-banya.jpg" alt="Баня из бруса" loading="lazy"></div>
+                  <div class="cat-body"><h3>Бани и хозблоки</h3><p>Из бруса и оцилиндрованного бревна. Площадь любая.</p></div>
+                </article>
+                <article class="cat" data-cat-card>
+                  <div class="img-slot ratio-4x5"><img src="assets/cat-commercial.jpg" alt="Коммерческое здание" loading="lazy"></div>
+                  <div class="cat-body"><h3>Коммерческие объекты</h3><p>Магазины, склады и офисные здания по вашему проекту.</p></div>
+                </article>
+                <article class="cat" data-cat-card>
+                  <div class="img-slot ratio-4x5"><img src="assets/cat-custom.jpg" alt="Индивидуальный проект дома" loading="lazy"></div>
+                  <div class="cat-body"><h3>Индивидуальные проекты</h3><p>Нестандартная архитектура, разработка с нуля.</p></div>
+                </article>
+              </div>
+              <div class="carousel-nav cat-nav">
+                <button class="cbtn" id="catPrev" aria-label="Предыдущая карточка">‹</button>
+                <button class="cbtn" id="catNext" aria-label="Следующая карточка">›</button>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ WHY US · cream ============ -->
+        <section class="sec features" data-theme="cream">
+          <div class="wrap feature-grid">
+            <div class="feature" data-anim="rise">
+              <svg class="feature-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 6 10v8c0 10 6 16.6 14 18 8-1.4 14-8 14-18v-8L20 4Z" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+              <h3>Гарантия на все работы</h3>
+              <p>5 лет на конструктив, 2 года на инженерные системы.</p>
+            </div>
+            <div class="feature" data-anim="rise" data-d="2">
+              <svg class="feature-icon" viewBox="0 0 40 40" aria-hidden="true"><rect x="6" y="6" width="28" height="28" rx="4" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M13 20l5 5 9-11" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3>Фиксированная смета</h3>
+              <p>Цена в договоре не меняется после начала стройки.</p>
+            </div>
+            <div class="feature" data-anim="rise" data-d="3">
+              <svg class="feature-icon" viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="14" fill="none" stroke="currentColor" stroke-width="2.2"/><path d="M20 12v8l6 4" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <h3>Соблюдение сроков</h3>
+              <p>Сроки закреплены в договоре. За каждый день просрочки платим компенсацию.</p>
+            </div>
+            <div class="feature" data-anim="rise" data-d="4">
+              <svg class="feature-icon" viewBox="0 0 40 40" aria-hidden="true"><path d="M8 30V16l12-9 12 9v14" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/><path d="M16 30v-9h8v9" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linejoin="round"/></svg>
+              <h3>Свой инженерный отдел</h3>
+              <p>Проект, смета и авторский надзор без подрядчиков со стороны.</p>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ ABOUT · cream ============ -->
+        <section class="sec about" id="about" data-theme="cream">
+          <div class="wrap">
+            <div class="about-grid">
+              <div class="about-copy" data-anim="rise">
+                <p class="eyebrow">О компании</p>
+                <h2 class="sec-title" data-anim="wipe">Строим сами, от фундамента до ключей.</h2>
+                <p class="about-lead">BuildPro работает без субподряда: проектировщики, прорабы и бригады в штате. Так мы держим сроки и отвечаем за результат от первого колышка до порога дома.</p>
+              </div>
+              <div class="about-photo" data-anim="rise" data-d="2">
+                <div class="img-slot ratio-4x5"><img src="assets/about.jpg" alt="Строительство каркасного дома" loading="lazy"></div>
+              </div>
+            </div>
+            <div class="stats-panel" data-anim="rise" data-d="3">
+              <div class="stats-row">
+                <div class="stat"><span class="stat-num">12</span><span class="stat-label">лет на рынке</span></div>
+                <div class="stat"><span class="stat-num">312</span><span class="stat-label">сданных объектов</span></div>
+                <div class="stat"><span class="stat-num">64</span><span class="stat-label">человека в штате</span></div>
+                <div class="stat"><span class="stat-num">4.8</span><span class="stat-label">рейтинг по отзывам</span></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ SERVICES · cream ============ -->
+        <section class="sec services" id="services" data-theme="cream">
+          <div class="wrap">
+            <div class="sec-head"><h2 class="sec-title" data-anim="wipe">Наши услуги.</h2></div>
+            <div class="svc-grid">
+              <article class="svc svc-lg" data-anim="rise">
+                <div class="img-slot ratio-3x2"><img src="assets/svc-houses.jpg" alt="Строительство частных домов" loading="lazy"></div>
+                <div class="svc-body"><h3>Строительство домов</h3><p>Полный цикл, от проекта до отделки.</p></div>
+              </article>
+              <article class="svc svc-lg" data-anim="rise" data-d="2">
+                <div class="img-slot ratio-3x2"><img src="assets/svc-commercial.jpg" alt="Коммерческие объекты" loading="lazy"></div>
+                <div class="svc-body"><h3>Коммерческое строительство</h3><p>Магазины, склады, офисные здания.</p></div>
+              </article>
+              <article class="svc" data-anim="rise" data-d="3">
+                <div class="img-slot ratio-1x1"><img src="assets/svc-banya.jpg" alt="Баня в саду" loading="lazy"></div>
+                <div class="svc-body"><h3>Бани под ключ</h3></div>
+              </article>
+              <article class="svc" data-anim="rise" data-d="4">
+                <div class="img-slot ratio-1x1"><img src="assets/svc-offices.jpg" alt="Ремонт и отделка офисов" loading="lazy"></div>
+                <div class="svc-body"><h3>Отделка офисов</h3></div>
+              </article>
+              <article class="svc" data-anim="rise">
+                <div class="img-slot ratio-1x1"><img src="assets/svc-docs.jpg" alt="" loading="lazy"></div>
+                <div class="svc-body"><h3>Проектная документация</h3></div>
+              </article>
+              <article class="svc" data-anim="rise" data-d="2">
+                <div class="img-slot ratio-1x1"><img src="assets/svc-landscape.jpg" alt="Благоустройство участка" loading="lazy"></div>
+                <div class="svc-body"><h3>Благоустройство участка</h3></div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ PROJECTS (filterable gallery) · navy/wood ============ -->
+        <section class="sec gallery" id="projects" data-theme="navy">
+          <div class="beams" id="galleryBeams" aria-hidden="true"></div>
+          <div class="wrap">
+            <div class="sec-head-row">
+              <h2 class="sec-title" data-anim="wipe">Наши проекты.</h2>
+              <div class="gallery-filters" role="tablist" aria-label="Фильтр проектов">
+                <button class="gf-btn is-active" data-filter="all" role="tab" aria-selected="true">Все</button>
+                <button class="gf-btn" data-filter="houses" role="tab" aria-selected="false">Дома</button>
+                <button class="gf-btn" data-filter="banya" role="tab" aria-selected="false">Бани</button>
+                <button class="gf-btn" data-filter="commercial" role="tab" aria-selected="false">Коммерция</button>
+              </div>
+            </div>
+
+            <div class="gallery-grid">
+              <article class="proj" data-cat="houses">
+                <div class="img-slot ratio-4x3"><img src="assets/proj-1.jpg" alt="" loading="lazy"></div>
+                <div class="proj-body"><h3>Дом в КП «Ясная Поляна»</h3><span class="proj-meta">210 м² · 5 месяцев</span></div>
+              </article>
+              <article class="proj" data-cat="banya">
+                <div class="img-slot ratio-4x3"><img src="assets/proj-2.jpg" alt="Баня из кедра" loading="lazy"></div>
+                <div class="proj-body"><h3>Баня из кедра</h3><span class="proj-meta">54 м² · 1,5 месяца</span></div>
+              </article>
+              <article class="proj" data-cat="commercial">
+                <div class="img-slot ratio-4x3"><img src="assets/proj-3.jpg" alt="Склад «Северный»" loading="lazy"></div>
+                <div class="proj-body"><h3>Склад «Северный»</h3><span class="proj-meta">640 м² · 4 месяца</span></div>
+              </article>
+              <article class="proj" data-cat="houses">
+                <div class="img-slot ratio-4x3"><img src="assets/proj-4.jpg" alt="Дом в стиле барнхаус" loading="lazy"></div>
+                <div class="proj-body"><h3>Дом в стиле барнхаус</h3><span class="proj-meta">168 м² · 4 месяца</span></div>
+              </article>
+              <article class="proj" data-cat="commercial">
+                <div class="img-slot ratio-4x3"><img src="assets/proj-5.jpg" alt="Офис «Полюс»" loading="lazy"></div>
+                <div class="proj-body"><h3>Офис «Полюс»</h3><span class="proj-meta">320 м² · 3 месяца</span></div>
+              </article>
+              <article class="proj" data-cat="houses">
+                <div class="img-slot ratio-4x3"><img src="assets/proj-6.jpg" alt="Дом в КП «Берёзки»" loading="lazy"></div>
+                <div class="proj-body"><h3>Дом в КП «Берёзки»</h3><span class="proj-meta">184 м² · 4,5 месяца</span></div>
+              </article>
+            </div>
+            <p class="gallery-empty" hidden>В этой категории пока нет проектов.</p>
+          </div>
+        </section>
+
+        <!-- ============ HOW WE WORK · cream ============ -->
+        <section class="sec process" id="process" data-theme="cream">
+          <div class="wrap">
+            <div class="sec-head-row">
+              <h2 class="sec-title" data-anim="wipe">Как мы работаем.</h2>
+              <div class="carousel-nav">
+                <button class="cbtn" data-scroll="processScroll" data-dir="-1" aria-label="Назад">‹</button>
+                <button class="cbtn" data-scroll="processScroll" data-dir="1" aria-label="Вперёд">›</button>
+              </div>
+            </div>
+          </div>
+          <div class="scroller" id="processScroll">
+            <div class="scroller-inner">
+              <div class="step"><span class="step-num">01</span><h3>Заявка</h3><p>Оставляете заявку на сайте или звоните нам.</p></div>
+              <div class="step"><span class="step-num">02</span><h3>Выезд на участок</h3><p>Инженер осматривает участок и уточняет задачу.</p></div>
+              <div class="step"><span class="step-num">03</span><h3>Проект и смета</h3><p>Готовим проект и фиксируем стоимость в договоре.</p></div>
+              <div class="step"><span class="step-num">04</span><h3>Строительство</h3><p>Ведём объект своими бригадами, без субподряда.</p></div>
+              <div class="step"><span class="step-num">05</span><h3>Приёмка объекта</h3><p>Проверяем каждый этап вместе с вами перед сдачей.</p></div>
+              <div class="step"><span class="step-num">06</span><h3>Гарантия</h3><p>Остаёмся на связи весь гарантийный срок.</p></div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ CONSTRUCTION STAGES · navy ============ -->
+        <section class="sec stages" data-theme="navy">
+          <div class="wrap stages-grid">
+            <div class="stages-copy" data-anim="rise">
+              <p class="eyebrow eyebrow-light">Этапы строительства</p>
+              <h2 class="sec-title sec-title-light" data-anim="wipe">Каждый этап зафиксирован в графике.</h2>
+              <p class="stages-lead">Вы получаете график работ на старте и видите, на каком этапе находится объект, без звонков прорабу каждую неделю.</p>
+            </div>
+            <ul class="stages-list" data-anim="rise" data-d="2">
+              <li><span class="stage-num">01</span><div><strong>Подготовка участка</strong><span>Расчистка, разметка, подъездные пути.</span></div></li>
+              <li><span class="stage-num">02</span><div><strong>Фундамент</strong><span>Земляные работы, заливка, гидроизоляция.</span></div></li>
+              <li><span class="stage-num">03</span><div><strong>Каркас и коробка</strong><span>Стены, перекрытия, кровля.</span></div></li>
+              <li><span class="stage-num">04</span><div><strong>Инженерные сети</strong><span>Электрика, вода, отопление, вентиляция.</span></div></li>
+              <li><span class="stage-num">05</span><div><strong>Отделочные работы</strong><span>Внутренняя и внешняя отделка под ключ.</span></div></li>
+              <li><span class="stage-num">06</span><div><strong>Сдача объекта</strong><span>Приёмка, документы, передача ключей.</span></div></li>
+            </ul>
+          </div>
+        </section>
+
+        <!-- ============ LEAD FORM CTA · navy ============ -->
+        <section class="sec cta-band" id="lead" data-theme="navy" data-dock-stop>
+          <div class="img-slot cta-bg"><img src="assets/cta-bg.jpg" alt="" loading="lazy"></div>
+          <div class="wrap cta-grid">
+            <div class="cta-copy" data-anim="rise">
+              <h2 class="cta-title" data-anim="wipe">Хотите построить свой дом?</h2>
+              <p class="cta-note">Оставьте заявку, посчитаем стоимость и сроки по вашему участку в течение дня.</p>
+            </div>
+            <form class="lead-form" data-anim="rise" data-d="2" onsubmit="return false">
+              <label>Ваше имя<input type="text" placeholder="Дмитрий" /></label>
+              <label>Телефон<input type="tel" placeholder="+7 900 000 00 00" /></label>
+              <label>Тип объекта
+                <select>
+                  <option>Дом</option>
+                  <option>Баня</option>
+                  <option>Коммерческий объект</option>
+                  <option>Другое</option>
+                </select>
+              </label>
+              <label>Комментарий<textarea rows="2" placeholder="Площадь участка, пожелания"></textarea></label>
+              <button type="submit" class="btn btn-primary magnetic">Отправить заявку</button>
+              <p class="form-note">Это демо-форма для портфолио. Данные никуда не отправляются.</p>
+            </form>
+          </div>
+        </section>
+
+        <!-- ============ CONTACT · cream ============ -->
+        <section class="sec contact" id="contact" data-theme="cream" data-dock-stop>
+          <div class="wrap contact-grid">
+            <div class="contact-copy" data-anim="rise">
+              <p class="eyebrow">Контакты</p>
+              <h2 class="sec-title" data-anim="wipe">Заезжайте в офис или звоните.</h2>
+              <ul class="contact-list">
+                <li><span class="c-label">Адрес</span><span class="c-val">Москва, ул. Складочная, 3</span></li>
+                <li><span class="c-label">Часы работы</span><span class="c-val">Пн-Сб, 9:00-19:00</span></li>
+                <li><span class="c-label">Телефон</span><span class="c-val"><a href="tel:+74951234567">+7 (495) 123-45-67</a></span></li>
+                <li><span class="c-label">Email</span><span class="c-val"><a href="mailto:info@buildpro.ru">info@buildpro.ru</a></span></li>
+              </ul>
+            </div>
+            <div class="map-block" data-anim="rise" data-d="2">
+              <iframe class="map-frame" src="https://www.google.com/maps?q=Складочная+улица,+Москва&output=embed" loading="lazy" title="BuildPro на карте" referrerpolicy="no-referrer-when-downgrade"></iframe>
+              <a class="map-cta" href="https://www.google.com/maps/dir/?api=1&destination=Складочная+улица,+Москва" target="_blank" rel="noopener">
+                <svg class="pin-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2c-4.1 0-7.5 3.4-7.5 7.5 0 5.6 6.6 11.6 6.9 11.9.2.2.5.2.7 0 .3-.3 6.9-6.3 6.9-11.9C19.5 5.4 16.1 2 12 2Zm0 10.2a2.7 2.7 0 1 1 0-5.4 2.7 2.7 0 0 1 0 5.4Z"/></svg>
+                <span>Проложить маршрут</span>
+              </a>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <div class="footer-twin" aria-hidden="true"></div>
+
+    <!-- ============ FOOTER · navy (matches hero's initial theme on purpose —
+         the footer is sticky, so it spuriously satisfies the html theme-sync
+         observer's rootMargin at page load alongside the hero; since both are
+         already meant to be navy, this avoids any wrong-color flash). ============ -->
+    <footer class="site-footer" data-theme="navy">
+      <div class="wrap footer-top">
+        <div class="footer-brand">
+          <span class="logo-mark-footer" aria-hidden="true"></span>
+          <p class="footer-tag">BuildPro. Строим дома, бани и коммерческие объекты под ключ с 2014 года.</p>
+        </div>
+        <nav class="footer-col" aria-label="Навигация">
+          <span class="footer-h">Навигация</span>
+          <a href="#about">О компании</a><a href="#services">Услуги</a><a href="#projects">Проекты</a><a href="#process">Как мы работаем</a><a href="#contact">Контакты</a>
+        </nav>
+        <div class="footer-col">
+          <span class="footer-h">Услуги</span>
+          <span>Строительство домов</span><span>Строительство бань</span><span>Коммерческие объекты</span><span>Проектная документация</span>
+        </div>
+        <div class="footer-col footer-legal">
+          <span class="footer-h">Реквизиты</span>
+          <span>ООО «БилдПро»</span><span>ИНН 7712345678</span><span>ОГРН 1157746123456</span>
+        </div>
+      </div>
+      <div class="wrap footer-bottom">
+        <span>© 2026 ООО «БилдПро». Все права защищены.</span>
+        <span class="footer-demo">Демо для портфолио</span>
+      </div>
+    </footer>
+  </div>
+
+  <script defer src="shared/vendor/gsap.min.js"></script>
+  <script defer src="shared/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="script.js?v=9"></script>
+  <script defer src="shared/motion.js"></script>
+</body>
+</html>

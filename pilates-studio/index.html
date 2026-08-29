@@ -1,0 +1,361 @@
+<!doctype html>
+<html lang="en" data-theme="paper">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Harmony · Pilates, Yoga &amp; Stretching Studio in Dubai</title>
+  <meta name="description" content="Harmony is a pilates, yoga and stretching studio in Jumeirah, Dubai. Reformer, yoga and stretching in small groups." />
+  <meta name="theme-color" content="#F2EADE" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Manrope:wght@400;600;700&family=Caveat:wght@700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="shared/motion.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=2" />
+</head>
+<body>
+
+  <div class="field" aria-hidden="true"><i class="b1"></i><i class="b2"></i><i class="b3"></i></div>
+
+  <!-- Пилюля-меню лежит снаружи .frame: внутри трансформируемой
+       обёртки position:fixed приклеился бы к странице -->
+  <nav class="pill-nav" aria-label="Primary">
+    <ul>
+      <li><a href="#studio" data-en="Studio" data-ru="Студия"></a></li>
+      <li><a href="#classes" data-en="Classes" data-ru="Занятия"></a></li>
+      <li><a href="#schedule" data-en="Schedule" data-ru="Расписание"></a></li>
+      <li><a href="#plans" data-en="Plans" data-ru="Цены"></a></li>
+      <li>
+        <button class="pill-lang" id="langToggle" type="button" aria-label="Switch language">
+          <span class="lang-opt" data-lang="en">EN</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-opt" data-lang="ru">RU</span>
+        </button>
+      </li>
+    </ul>
+  </nav>
+
+  <div class="dock" data-dock>
+    <p data-en="Small groups · Jumeirah" data-ru="Малые группы · Джумейра"></p>
+    <a href="#plans" class="btn btn-primary btn-sm magnetic" data-en="Book" data-ru="Записаться"></a>
+  </div>
+
+  <div class="frame">
+    <div class="page-wrap">
+      <main id="top">
+
+        <!-- ============ 1. HERO · бумага ============ -->
+        <section class="sec hero" data-theme="paper" data-dock-after>
+          <div class="wrap">
+            <div class="hero-meta" data-anim="rise">
+              <span class="label" data-en="Pilates · Yoga · Stretching" data-ru="Пилатес · Йога · Растяжка"></span>
+              <span class="label" data-en="Jumeirah, Dubai" data-ru="Джумейра, Дубай"></span>
+              <span class="label" data-en="Since 2021" data-ru="С 2021 года"></span>
+            </div>
+
+            <h1>
+              <span class="display hero-line-1" data-anim="wipe" data-en="Your calm" data-ru="Спокойное"></span>
+
+              <!-- слово прижато к правому краю, фото стоит рядом -->
+              <span class="hero-mid">
+                <span class="display" data-anim="wipe" data-wd-base="130" data-en="movement" data-ru="движение"></span>
+                <span class="hero-photo shot r-1x1" data-anim="rise" data-d="2">
+                  <img src="assets/hero.jpg" alt="A woman practising reformer pilates in a bright studio"
+                       width="900" height="1200" fetchpriority="high" decoding="async" />
+                </span>
+              </span>
+
+              <span class="display hero-line-1" data-anim="wipe" data-wd-base="260" data-en="every day" data-ru="каждый день"></span>
+            </h1>
+
+            <div class="hero-foot">
+              <p class="lead" data-anim="rise" data-d="3" data-en="Reformer, yoga and stretching. A quiet studio in Jumeirah, six people max." data-ru="Реформер, йога и растяжка. Тихая студия в Джумейре, группы до шести человек."></p>
+              <div class="hero-cta" data-anim="rise" data-d="4">
+                <a href="#plans" class="btn btn-primary magnetic" data-en="Book a class" data-ru="Записаться"></a>
+                <a href="#classes" class="btn btn-ghost" data-en="Classes" data-ru="Занятия"></a>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 2. МАНИФЕСТ · лес ============ -->
+        <!-- Только типографика. Пауза после плотного героя. -->
+        <section class="sec manifesto" id="studio" data-theme="forest">
+          <div class="wrap">
+            <span class="label" data-anim="rise" data-en="The studio" data-ru="О студии"></span>
+            <p class="manifesto-text" data-anim="rise" data-d="2">
+              <span data-en="You leave" data-ru="Выходишь"></span>
+              <em data-en="lighter" data-ru="легче,"></em>
+              <span data-en="than you came in." data-ru="чем заходишь."></span>
+            </p>
+            <p class="manifesto-note" data-anim="rise" data-d="3" data-en="Six reformers, that is all the room holds. Which means the teacher gets to everyone." data-ru="Шесть реформеров, больше в зал не помещается. Значит, тренер успевает подойти к каждому."></p>
+          </div>
+        </section>
+
+        <!-- ============ 3. ЗАНЯТИЯ · глина, стопка карточек ============ -->
+        <section class="sec classes" id="classes" data-theme="clay">
+          <div class="wrap">
+            <div class="classes-head">
+              <h2 class="display-2" data-anim="wipe" data-en="Three formats" data-ru="Три направления"></h2>
+              <span class="label" data-anim="rise" data-d="2" data-en="Reformer / Yoga / Stretching" data-ru="Реформер / Йога / Растяжка"></span>
+            </div>
+
+            <div class="stack">
+              <article class="cls" data-anim="rise">
+                <span class="shot r-4x5">
+                  <img src="assets/class-reformer.jpg" alt="Reformer pilates class"
+                       width="800" height="1000" loading="lazy" decoding="async" />
+                </span>
+                <div>
+                  <span class="cls-num">01</span>
+                  <h3 data-en="Reformer" data-ru="Реформер"></h3>
+                  <p data-en="The springs take the load off your joints. First class usually hits the abs, not the back." data-ru="Пружины снимают нагрузку с суставов. После первого раза обычно болит пресс, а не спина."></p>
+                </div>
+              </article>
+
+              <article class="cls" data-anim="rise">
+                <span class="shot r-4x5">
+                  <img src="assets/class-yoga.jpg" alt="Yoga class"
+                       width="800" height="1000" loading="lazy" decoding="async" />
+                </span>
+                <div>
+                  <span class="cls-num">02</span>
+                  <h3 data-en="Yoga" data-ru="Йога"></h3>
+                  <p data-en="Slow vinyasa. Lights go down for the evening classes." data-ru="Виньяса в медленном темпе. На вечерних занятиях приглушают свет."></p>
+                </div>
+              </article>
+
+              <article class="cls" data-anim="rise">
+                <span class="shot r-4x5">
+                  <img src="assets/class-stretch.jpg" alt="Stretching class"
+                       width="800" height="1000" loading="lazy" decoding="async" />
+                </span>
+                <div>
+                  <span class="cls-num">03</span>
+                  <h3 data-en="Stretching" data-ru="Растяжка"></h3>
+                  <p data-en="For desk-bound backs. We start with hips and the upper spine." data-ru="Для тех, кто целый день сидит за столом. Начинаем с бёдер и грудного отдела."></p>
+                </div>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 4. НЕДЕЛЯ · бумага, липкая фоновая надпись ============ -->
+        <section class="sec schedule" id="schedule" data-theme="paper">
+          <div class="wrap sched-stage">
+            <span class="label" data-anim="rise" data-en="Dubai time · small groups" data-ru="Время по Дубаю · малые группы"></span>
+            <!-- огромное слово стоит, строки расписания едут поверх -->
+            <div class="stickyword" aria-hidden="true" data-en="SCHEDULE" data-ru="РАСПИСАНИЕ"></div>
+
+            <div class="sched-scroll">
+              <div class="tt" role="table" aria-label="Weekly schedule">
+                <div class="tt-row tt-head" role="row">
+                  <span role="columnheader" data-en="Time" data-ru="Время"></span>
+                  <span role="columnheader" data-en="Mon" data-ru="Пн"></span>
+                  <span role="columnheader" data-en="Tue" data-ru="Вт"></span>
+                  <span role="columnheader" data-en="Wed" data-ru="Ср"></span>
+                  <span role="columnheader" data-en="Thu" data-ru="Чт"></span>
+                  <span role="columnheader" data-en="Fri" data-ru="Пт"></span>
+                  <span role="columnheader" data-en="Sat" data-ru="Сб"></span>
+                </div>
+
+                <div class="tt-row" role="row">
+                  <span class="tt-time" role="cell">08:00</span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-yog" data-en="Yoga" data-ru="Йога"></span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-yog" data-en="Yoga" data-ru="Йога"></span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-non">·</span>
+                </div>
+
+                <div class="tt-row" role="row">
+                  <span class="tt-time" role="cell">10:00</span>
+                  <span role="cell" class="cell c-yog" data-en="Yoga" data-ru="Йога"></span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-str" data-en="Stretch" data-ru="Растяжка"></span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-yog" data-en="Yoga" data-ru="Йога"></span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                </div>
+
+                <div class="tt-row" role="row">
+                  <span class="tt-time" role="cell">13:00</span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-non">·</span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-non">·</span>
+                  <span role="cell" class="cell c-str" data-en="Stretch" data-ru="Растяжка"></span>
+                  <span role="cell" class="cell c-yog" data-en="Yoga" data-ru="Йога"></span>
+                </div>
+
+                <div class="tt-row" role="row">
+                  <span class="tt-time" role="cell">17:00</span>
+                  <span role="cell" class="cell c-str" data-en="Stretch" data-ru="Растяжка"></span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-yog" data-en="Yoga" data-ru="Йога"></span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-non">·</span>
+                </div>
+
+                <div class="tt-row" role="row">
+                  <span class="tt-time" role="cell">19:00</span>
+                  <span role="cell" class="cell c-yog" data-en="Yoga" data-ru="Йога"></span>
+                  <span role="cell" class="cell c-str" data-en="Stretch" data-ru="Растяжка"></span>
+                  <span role="cell" class="cell c-ref" data-en="Reformer" data-ru="Реформер"></span>
+                  <span role="cell" class="cell c-yog" data-en="Yoga" data-ru="Йога"></span>
+                  <span role="cell" class="cell c-non">·</span>
+                  <span role="cell" class="cell c-non">·</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="tt-legend" data-anim="rise">
+              <span class="lg"><i class="c-ref"></i><span data-en="Reformer" data-ru="Реформер"></span></span>
+              <span class="lg"><i class="c-yog"></i><span data-en="Yoga" data-ru="Йога"></span></span>
+              <span class="lg"><i class="c-str"></i><span data-en="Stretching" data-ru="Растяжка"></span></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 5. ЦЕНЫ · чернила, строки с крупной ценой ============ -->
+        <section class="sec plans-sec" id="plans" data-theme="ink" data-dock-stop>
+          <div class="wrap">
+            <h2 class="display-2" data-anim="wipe" data-en="Come once, or keep coming" data-ru="Один раз или надолго"></h2>
+
+            <div class="plans">
+              <article class="plan" data-anim="rise">
+                <span class="plan-name" data-en="Single class" data-ru="Разовое"></span>
+                <p class="plan-note" data-en="One class, any format. Socks and a mat are on us." data-ru="Одно занятие, любое направление. Коврик и носки дадим."></p>
+                <span class="plan-price"><sup>AED</sup>120</span>
+              </article>
+
+              <article class="plan" data-anim="rise" data-d="2">
+                <span class="plan-name">
+                  <span data-en="4 a month" data-ru="4 в месяц"></span>
+                  <span class="plan-flag" data-en="Most people pick this" data-ru="Выбирают чаще"></span>
+                </span>
+                <p class="plan-note" data-en="Four classes. They roll over if you travel." data-ru="Четыре занятия. Не сгорают, если вы в отъезде."></p>
+                <span class="plan-price"><sup>AED</sup>420</span>
+              </article>
+
+              <article class="plan" data-anim="rise" data-d="3">
+                <span class="plan-name" data-en="Unlimited" data-ru="Безлимит"></span>
+                <p class="plan-note" data-en="Come daily if you want. Most people land on 10 to 12 a month." data-ru="Ходите хоть каждый день. Обычно выходит 10-12 занятий в месяц."></p>
+                <span class="plan-price"><sup>AED</sup>750</span>
+              </article>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 6. ОТЗЫВЫ · лес ============ -->
+        <section class="sec revs-sec" data-theme="forest">
+          <div class="wrap">
+            <span class="label" data-anim="rise" data-en="Reviews" data-ru="Что говорят"></span>
+            <div class="revs">
+              <figure class="rev" data-anim="rise">
+                <div class="rev-stars" aria-label="5 out of 5">★★★★★</div>
+                <blockquote data-en="Amazing studio! Everyone is so friendly, the trainers always have a smile. You walk out feeling light as a feather." data-ru="Невероятно классная студия! Персонал очень доброжелательный, тренеры всегда с улыбкой. Выходишь лёгкой, как пёрышко."></blockquote>
+                <figcaption><span class="rev-name">Dana K.</span><span class="rev-role" data-en="member since 2024" data-ru="с нами с 2024"></span></figcaption>
+              </figure>
+              <figure class="rev" data-anim="rise" data-d="2">
+                <div class="rev-stars" aria-label="5 out of 5">★★★★★</div>
+                <blockquote data-en="I go to Sasha's morning classes, the atmosphere is so nice. Gives me energy for the whole day." data-ru="Хожу на утренние классы к Саше, очень приятная атмосфера. Заряжаюсь энергией на весь день."></blockquote>
+                <figcaption><span class="rev-name">Yulia R.</span><span class="rev-role" data-en="member since 2023" data-ru="с нами с 2023"></span></figcaption>
+              </figure>
+              <figure class="rev" data-anim="rise" data-d="3">
+                <div class="rev-stars" aria-label="4 out of 5">★★★★☆</div>
+                <blockquote data-en="Great studio, the instructors are super attentive. Only downside, parking can be tricky in the evening, but it is worth it." data-ru="Отличная студия, инструкторы очень внимательные. Из минусов, вечером бывает сложно с парковкой, но оно того стоит."></blockquote>
+                <figcaption><span class="rev-name">Amira S.</span><span class="rev-role" data-en="member since 2025" data-ru="с нами с 2025"></span></figcaption>
+              </figure>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 7. ЛОКАЦИЯ · бумага ============ -->
+        <section class="sec loc-sec" id="location" data-theme="paper">
+          <div class="wrap loc-grid">
+            <div>
+              <span class="label" data-anim="rise" data-en="Find us" data-ru="Как найти"></span>
+              <h2 class="display-2" data-anim="wipe" data-d="2" data-en="Jumeirah 1" data-ru="Джумейра 1"></h2>
+              <ul class="loc-list" data-anim="rise" data-d="3">
+                <li><span data-en="Address" data-ru="Адрес"></span><span data-en="Studio 4, Al Wasl Road, Dubai" data-ru="Studio 4, Al Wasl Road, Дубай"></span></li>
+                <li><span data-en="Hours" data-ru="Часы"></span><span data-en="Mon to Sat, 07:30 to 20:30" data-ru="Пн-Сб, 07:30-20:30"></span></li>
+                <li><span data-en="Parking" data-ru="Парковка"></span><span data-en="Free, right by the entrance" data-ru="Бесплатная, прямо у входа"></span></li>
+              </ul>
+              <a href="#plans" class="btn btn-primary magnetic" data-anim="rise" data-d="4" data-en="Book a class" data-ru="Записаться"></a>
+            </div>
+            <div class="loc-photo shot r-16x9" data-anim="rise" data-d="2">
+              <img src="assets/reception.jpg" alt="The Harmony studio reception with the team"
+                   width="1000" height="750" loading="lazy" decoding="async" />
+              <span class="script" data-en="see you here" data-ru="ждём тебя"></span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ============ 8. ФИНАЛ · глина ============ -->
+        <section class="sec final" data-theme="clay" data-dock-stop>
+          <div class="wrap">
+            <a href="#plans" class="cta-line magnetic" data-anim="rise">
+              <span data-en="Let's make it" data-ru="Пусть будет"></span>
+              <span class="ticker" aria-hidden="true">
+                <span data-en="calm" data-ru="спокойно"></span>
+                <span data-en="steady" data-ru="стабильно"></span>
+                <span data-en="yours" data-ru="по-твоему"></span>
+                <span data-en="a habit" data-ru="привычным"></span>
+              </span>
+              <span class="cta-arrow" aria-hidden="true">→</span>
+            </a>
+            <div class="final-foot" data-anim="rise" data-d="2">
+              <span class="label" data-en="First class runs 60 minutes" data-ru="Первое занятие 60 минут"></span>
+              <span class="label" data-en="Six people max" data-ru="Максимум 6 человек в зале"></span>
+            </div>
+          </div>
+        </section>
+
+      </main>
+    </div>
+
+    <div class="footer-twin" aria-hidden="true"></div>
+
+    <!-- ============ ПОДВАЛ · чернила ============ -->
+    <footer class="site-footer" data-theme="ink">
+      <div class="wrap">
+        <div class="foot-word" data-en="HARMONY" data-ru="HARMONY"></div>
+
+        <div class="foot-grid">
+          <div class="foot-col">
+            <span class="foot-h" data-en="Studio" data-ru="Студия"></span>
+            <a href="#studio" data-en="About" data-ru="О студии"></a>
+            <a href="#classes" data-en="Classes" data-ru="Занятия"></a>
+            <a href="#schedule" data-en="Schedule" data-ru="Расписание"></a>
+            <a href="#plans" data-en="Plans" data-ru="Цены"></a>
+          </div>
+          <div class="foot-col">
+            <span class="foot-h" data-en="Say hello" data-ru="Связаться"></span>
+            <a href="#!" class="foot-contact"><span class="ci">WhatsApp</span><span>+971 50 000 0000</span></a>
+            <a href="#!" class="foot-contact"><span class="ci">Instagram</span><span>@harmony.studio</span></a>
+            <a href="#!" class="foot-contact"><span class="ci">Email</span><span>hello@harmony.ae</span></a>
+          </div>
+          <div class="foot-col">
+            <span class="foot-h" data-en="Where" data-ru="Где"></span>
+            <span data-en="Studio 4, Al Wasl Road" data-ru="Studio 4, Al Wasl Road"></span>
+            <span data-en="Jumeirah 1, Dubai" data-ru="Джумейра 1, Дубай"></span>
+            <span data-en="Mon to Sat, 07:30 to 20:30" data-ru="Пн-Сб, 07:30-20:30"></span>
+          </div>
+        </div>
+
+        <div class="foot-bottom">
+          <span data-en="© 2026 Harmony Studio. Portfolio demo." data-ru="© 2026 Harmony Studio. Демо для портфолио."></span>
+          <span class="foot-made" data-en="see you on the mat" data-ru="до встречи на коврике"></span>
+        </div>
+      </div>
+    </footer>
+  </div>
+
+  <script defer src="shared/vendor/gsap.min.js"></script>
+  <script defer src="shared/vendor/ScrollTrigger.min.js"></script>
+  <script defer src="script.js"></script>
+  <script defer src="shared/motion.js"></script>
+</body>
+</html>
