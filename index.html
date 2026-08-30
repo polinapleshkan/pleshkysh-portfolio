@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared/motion.css?v=1" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
@@ -19,10 +19,15 @@
     <div class="wrap pf-header-inner">
       <a class="wordmark" href="#top" id="top">pleshkysh<span class="wordmark-dot">.</span></a>
       <nav class="pf-nav" aria-label="Основное">
-        <a href="index.html" class="is-active">Работы</a>
-        <a href="pricing.html">Цены</a>
+        <a href="index.html" class="is-active" data-en="Work" data-ru="Работы">Работы</a>
+        <a href="pricing.html" data-en="Prices" data-ru="Цены">Цены</a>
+        <button class="pill-lang" id="langToggle" type="button" aria-label="Switch language">
+          <span class="lang-opt" data-lang="en">EN</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-opt" data-lang="ru">RU</span>
+        </button>
       </nav>
-      <a href="#contact" class="btn btn-primary btn-sm magnetic">Обсудить проект</a>
+      <a href="#contact" class="btn btn-primary btn-sm magnetic" data-en="Get in touch" data-ru="Обсудить проект">Обсудить проект</a>
     </div>
   </header>
 
@@ -32,9 +37,9 @@
       <div class="star star-2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c0 6 2 8.5 6 8.5S12 12 12 24c0-6-2-8.5-6-8.5S12 4 12 0Z"/></svg></div>
       <div class="star star-3" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c0 6 2 8.5 6 8.5S12 12 12 24c0-6-2-8.5-6-8.5S12 4 12 0Z"/></svg></div>
       <div class="wrap">
-        <p class="intro-eyebrow" data-anim="rise">Портфолио</p>
-        <h1 class="intro-title" data-anim="wipe">Сайты и лендинги под вашу нишу.</h1>
-        <p class="intro-sub" data-anim="rise" data-d="2">Собираю сайты с нуля под задачу бизнеса. Каждую работу можно открыть и полистать прямо здесь.</p>
+        <p class="intro-eyebrow" data-anim="rise" data-en="Portfolio" data-ru="Портфолио">Портфолио</p>
+        <h1 class="intro-title" data-anim="wipe" data-en="Websites and landing pages for your niche." data-ru="Сайты и лендинги под вашу нишу.">Сайты и лендинги под вашу нишу.</h1>
+        <p class="intro-sub" data-anim="rise" data-d="2" data-en="I build sites from scratch for your business. Open any project right here and click through it." data-ru="Собираю сайты с нуля под задачу бизнеса. Каждую работу можно открыть и полистать прямо здесь.">Собираю сайты с нуля под задачу бизнеса. Каждую работу можно открыть и полистать прямо здесь.</p>
       </div>
     </section>
 
@@ -49,8 +54,8 @@
     <section class="works">
       <div class="wrap">
         <div class="works-head">
-          <h2 class="works-title" data-anim="wipe">Работы</h2>
-          <span class="works-count">07 проектов</span>
+          <h2 class="works-title" data-anim="wipe" data-en="Work" data-ru="Работы">Работы</h2>
+          <span class="works-count" data-en="07 projects" data-ru="07 проектов">07 проектов</span>
         </div>
 
         <div class="works-grid">
@@ -62,11 +67,11 @@
             <div class="case-meta">
               <div class="case-line">
                 <h3 class="case-name">Harmony</h3>
-                <span class="case-open"><span>Смотреть</span><i class="arrow"></i></span>
+                <span class="case-open"><span data-en="View" data-ru="Смотреть">Смотреть</span><i class="arrow"></i></span>
               </div>
-              <p class="case-desc">Пилатес-студия, Дубай</p>
+              <p class="case-desc" data-en="Pilates studio, Dubai" data-ru="Пилатес-студия, Дубай">Пилатес-студия, Дубай</p>
               <div class="case-tags">
-                <span class="tag">Лендинг</span>
+                <span class="tag" data-en="Landing" data-ru="Лендинг">Лендинг</span>
                 <span class="tag">EN / RU</span>
                 <span class="tag">Wellness</span>
               </div>
@@ -80,13 +85,13 @@
             <div class="case-meta">
               <div class="case-line">
                 <h3 class="case-name">BuildPro</h3>
-                <span class="case-open"><span>Смотреть</span><i class="arrow"></i></span>
+                <span class="case-open"><span data-en="View" data-ru="Смотреть">Смотреть</span><i class="arrow"></i></span>
               </div>
-              <p class="case-desc">Строительная компания, Россия</p>
+              <p class="case-desc" data-en="Construction company, Russia" data-ru="Строительная компания, Россия">Строительная компания, Россия</p>
               <div class="case-tags">
-                <span class="tag">Лендинг</span>
+                <span class="tag" data-en="Landing" data-ru="Лендинг">Лендинг</span>
                 <span class="tag">RU</span>
-                <span class="tag">Строительство</span>
+                <span class="tag" data-en="Construction" data-ru="Строительство">Строительство</span>
               </div>
             </div>
           </article>
@@ -98,13 +103,13 @@
             <div class="case-meta">
               <div class="case-line">
                 <h3 class="case-name">Lumea</h3>
-                <span class="case-open"><span>Смотреть</span><i class="arrow"></i></span>
+                <span class="case-open"><span data-en="View" data-ru="Смотреть">Смотреть</span><i class="arrow"></i></span>
               </div>
-              <p class="case-desc">Эстетическая клиника, Дубай</p>
+              <p class="case-desc" data-en="Aesthetic clinic, Dubai" data-ru="Эстетическая клиника, Дубай">Эстетическая клиника, Дубай</p>
               <div class="case-tags">
-                <span class="tag">Лендинг</span>
+                <span class="tag" data-en="Landing" data-ru="Лендинг">Лендинг</span>
                 <span class="tag">EN</span>
-                <span class="tag">Медицина</span>
+                <span class="tag" data-en="Medicine" data-ru="Медицина">Медицина</span>
               </div>
             </div>
           </article>
@@ -116,13 +121,13 @@
             <div class="case-meta">
               <div class="case-line">
                 <h3 class="case-name">Lingway</h3>
-                <span class="case-open"><span>Смотреть</span><i class="arrow"></i></span>
+                <span class="case-open"><span data-en="View" data-ru="Смотреть">Смотреть</span><i class="arrow"></i></span>
               </div>
-              <p class="case-desc">Языковая школа, Москва</p>
+              <p class="case-desc" data-en="Language school, Moscow" data-ru="Языковая школа, Москва">Языковая школа, Москва</p>
               <div class="case-tags">
-                <span class="tag">Лендинг</span>
+                <span class="tag" data-en="Landing" data-ru="Лендинг">Лендинг</span>
                 <span class="tag">RU</span>
-                <span class="tag">Образование</span>
+                <span class="tag" data-en="Education" data-ru="Образование">Образование</span>
               </div>
             </div>
           </article>
@@ -134,13 +139,13 @@
             <div class="case-meta">
               <div class="case-line">
                 <h3 class="case-name">Meridian Properties</h3>
-                <span class="case-open"><span>Смотреть</span><i class="arrow"></i></span>
+                <span class="case-open"><span data-en="View" data-ru="Смотреть">Смотреть</span><i class="arrow"></i></span>
               </div>
-              <p class="case-desc">Агентство недвижимости, Дубай</p>
+              <p class="case-desc" data-en="Real estate agency, Dubai" data-ru="Агентство недвижимости, Дубай">Агентство недвижимости, Дубай</p>
               <div class="case-tags">
-                <span class="tag">Лендинг</span>
+                <span class="tag" data-en="Landing" data-ru="Лендинг">Лендинг</span>
                 <span class="tag">EN</span>
-                <span class="tag">Недвижимость</span>
+                <span class="tag" data-en="Real Estate" data-ru="Недвижимость">Недвижимость</span>
               </div>
             </div>
           </article>
@@ -152,13 +157,13 @@
             <div class="case-meta">
               <div class="case-line">
                 <h3 class="case-name">Fenn &amp; Wren</h3>
-                <span class="case-open"><span>Смотреть</span><i class="arrow"></i></span>
+                <span class="case-open"><span data-en="View" data-ru="Смотреть">Смотреть</span><i class="arrow"></i></span>
               </div>
-              <p class="case-desc">Дизайн интерьеров и архитектура, Лондон</p>
+              <p class="case-desc" data-en="Interior design and architecture, London" data-ru="Дизайн интерьеров и архитектура, Лондон">Дизайн интерьеров и архитектура, Лондон</p>
               <div class="case-tags">
-                <span class="tag">Лендинг</span>
+                <span class="tag" data-en="Landing" data-ru="Лендинг">Лендинг</span>
                 <span class="tag">EN</span>
-                <span class="tag">Интерьеры</span>
+                <span class="tag" data-en="Interiors" data-ru="Интерьеры">Интерьеры</span>
               </div>
             </div>
           </article>
@@ -170,13 +175,13 @@
             <div class="case-meta">
               <div class="case-line">
                 <h3 class="case-name">vibekotik</h3>
-                <span class="case-open"><span>Смотреть</span><i class="arrow"></i></span>
+                <span class="case-open"><span data-en="View" data-ru="Смотреть">Смотреть</span><i class="arrow"></i></span>
               </div>
-              <p class="case-desc">Личный проект, гайд по нейросетям</p>
+              <p class="case-desc" data-en="Personal project, AI guide" data-ru="Личный проект, гайд по нейросетям">Личный проект, гайд по нейросетям</p>
               <div class="case-tags">
-                <span class="tag">Лендинг</span>
+                <span class="tag" data-en="Landing" data-ru="Лендинг">Лендинг</span>
                 <span class="tag">RU</span>
-                <span class="tag tag-mine">Мой проект</span>
+                <span class="tag tag-mine" data-en="My project" data-ru="Мой проект">Мой проект</span>
               </div>
             </div>
           </article>
@@ -188,10 +193,10 @@
 
     <section class="contact" id="contact">
       <div class="wrap contact-inner">
-        <h2 class="contact-title" data-anim="wipe">Нужен такой сайт под ваш проект?</h2>
-        <p class="contact-sub" data-anim="rise">Расскажите про нишу и задачу, соберу под неё.</p>
+        <h2 class="contact-title" data-anim="wipe" data-en="Need a site like this for your project?" data-ru="Нужен такой сайт под ваш проект?">Нужен такой сайт под ваш проект?</h2>
+        <p class="contact-sub" data-anim="rise" data-en="Tell me about your niche and goal, I'll build around it." data-ru="Расскажите про нишу и задачу, соберу под неё.">Расскажите про нишу и задачу, соберу под неё.</p>
         <div class="contact-actions" data-anim="rise" data-d="2">
-          <a href="https://t.me/pleshkanp?text=Здравствуйте! Хочу обсудить проект." target="_blank" rel="noopener" class="btn btn-primary magnetic">Написать в Telegram</a>
+          <a href="https://t.me/pleshkanp?text=Здравствуйте! Хочу обсудить проект." target="_blank" rel="noopener" class="btn btn-primary magnetic" data-en="Message on Telegram" data-ru="Написать в Telegram">Написать в Telegram</a>
           <a href="https://wa.me/971526682170?text=Здравствуйте! Хочу обсудить проект." target="_blank" rel="noopener" class="btn btn-outline magnetic">WhatsApp</a>
         </div>
       </div>
@@ -201,7 +206,7 @@
   <footer class="pf-footer">
     <div class="wrap pf-footer-inner">
       <span>© 2026 pleshkysh</span>
-      <span>Сайты и лендинги на нейросетях</span>
+      <span data-en="Websites and landing pages, built with AI" data-ru="Сайты и лендинги на нейросетях">Сайты и лендинги на нейросетях</span>
     </div>
   </footer>
 
@@ -220,6 +225,7 @@
     </div>
   </div>
 
+  <script src="lang.js?v=1"></script>
   <script src="script.js?v=2"></script>
   <script defer src="_shared/vendor/gsap.min.js"></script>
   <script defer src="_shared/vendor/ScrollTrigger.min.js"></script>

@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Unbounded:wght@500;700;800;900&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="_shared/motion.css?v=1" />
-  <link rel="stylesheet" href="style.css?v=2" />
+  <link rel="stylesheet" href="style.css?v=3" />
 </head>
 <body>
 
@@ -19,10 +19,15 @@
     <div class="wrap pf-header-inner">
       <a class="wordmark" href="index.html">pleshkysh<span class="wordmark-dot">.</span></a>
       <nav class="pf-nav" aria-label="Основное">
-        <a href="index.html">Работы</a>
-        <a href="pricing.html" class="is-active">Цены</a>
+        <a href="index.html" data-en="Work" data-ru="Работы">Работы</a>
+        <a href="pricing.html" class="is-active" data-en="Prices" data-ru="Цены">Цены</a>
+        <button class="pill-lang" id="langToggle" type="button" aria-label="Switch language">
+          <span class="lang-opt" data-lang="en">EN</span>
+          <span class="lang-sep">/</span>
+          <span class="lang-opt" data-lang="ru">RU</span>
+        </button>
       </nav>
-      <a href="#contact" class="btn btn-primary btn-sm magnetic">Обсудить проект</a>
+      <a href="#contact" class="btn btn-primary btn-sm magnetic" data-en="Get in touch" data-ru="Обсудить проект">Обсудить проект</a>
     </div>
   </header>
 
@@ -32,52 +37,52 @@
       <div class="star star-2" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c0 6 2 8.5 6 8.5S12 12 12 24c0-6-2-8.5-6-8.5S12 4 12 0Z"/></svg></div>
       <div class="star star-3" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M12 0c0 6 2 8.5 6 8.5S12 12 12 24c0-6-2-8.5-6-8.5S12 4 12 0Z"/></svg></div>
       <div class="wrap">
-        <p class="intro-eyebrow" data-anim="rise">Цены</p>
-        <h1 class="intro-title" data-anim="wipe">Нужен сайт, бот или ассистент?</h1>
-        <p class="intro-sub" data-anim="rise" data-d="2">Фиксированная цена под уровень сложности, без «от и до». Цены в AED, курс скачет. Актуальный смотри по Google.</p>
+        <p class="intro-eyebrow" data-anim="rise" data-en="Prices" data-ru="Цены">Цены</p>
+        <h1 class="intro-title" data-anim="wipe" data-en="Need a site, bot or assistant?" data-ru="Нужен сайт, бот или ассистент?">Нужен сайт, бот или ассистент?</h1>
+        <p class="intro-sub" data-anim="rise" data-d="2" data-en="Fixed price by complexity level, no &quot;from and up to&quot;. Prices in AED, the rate moves, check the current one on Google." data-ru="Фиксированная цена под уровень сложности, без «от и до». Цены в AED, курс скачет. Актуальный смотри по Google.">Фиксированная цена под уровень сложности, без «от и до». Цены в AED, курс скачет. Актуальный смотри по Google.</p>
       </div>
     </section>
 
     <section class="pricing" id="sites">
       <div class="wrap">
         <div class="pricing-head" data-anim="rise">
-          <h2>🌐 Сайты</h2>
+          <h2 data-en="🌐 Sites" data-ru="🌐 Сайты">🌐 Сайты</h2>
         </div>
 
         <div class="pricing-grid">
           <div class="svc" data-anim="rise">
             <div class="svc-top">
-              <div class="svc-name">Лендинг, одностраничный сайт</div>
+              <div class="svc-name" data-en="Landing, single-page site" data-ru="Лендинг, одностраничный сайт">Лендинг, одностраничный сайт</div>
               <div class="svc-price">2 200-5 000 AED</div>
             </div>
-            <div class="svc-sub">Одна страница под продукт, услугу или личный бренд, дизайн всегда свой под нишу, не шаблон.</div>
-            <div class="svc-line"><span class="svc-tag lo">2 200 AED</span> Простой, как vibekotik: один сквозной скролл, 6-7 смысловых блоков, аккуратные fade-in при скролле, без уникальной механики.</div>
-            <div class="svc-line"><span class="svc-tag mid">3 500 AED</span> Средний, как Harmony, Lingway, Fenn &amp; Wren: общий анимационный движок (текст проявляется по словам, липкое меню, футер выезжает), 8-10 секций плюс одна фирменная деталь.</div>
-            <div class="svc-line"><span class="svc-tag hi">5 000 AED</span> Сложный, как BuildPro, Lumea, Meridian: всё из среднего плюс bespoke-механика, спроектированная с нуля только под этот проект, не копируется с другого сайта.</div>
+            <div class="svc-sub" data-en="One page for a product, service or personal brand, design always custom to the niche, never a template." data-ru="Одна страница под продукт, услугу или личный бренд, дизайн всегда свой под нишу, не шаблон.">Одна страница под продукт, услугу или личный бренд, дизайн всегда свой под нишу, не шаблон.</div>
+            <div class="svc-line"><span class="svc-tag lo">2 200 AED</span><span data-en="Simple, like vibekotik: one continuous scroll, 6-7 content blocks, clean fade-ins on scroll, no custom mechanic." data-ru="Простой, как vibekotik: один сквозной скролл, 6-7 смысловых блоков, аккуратные fade-in при скролле, без уникальной механики.">Простой, как vibekotik: один сквозной скролл, 6-7 смысловых блоков, аккуратные fade-in при скролле, без уникальной механики.</span></div>
+            <div class="svc-line"><span class="svc-tag mid">3 500 AED</span><span data-en="Medium, like Harmony, Lingway, Fenn &amp; Wren: shared animation engine (text reveals word by word, sticky nav, footer slides up), 8-10 sections plus one signature detail." data-ru="Средний, как Harmony, Lingway, Fenn &amp; Wren: общий анимационный движок (текст проявляется по словам, липкое меню, футер выезжает), 8-10 секций плюс одна фирменная деталь.">Средний, как Harmony, Lingway, Fenn &amp; Wren: общий анимационный движок (текст проявляется по словам, липкое меню, футер выезжает), 8-10 секций плюс одна фирменная деталь.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">5 000 AED</span><span data-en="Complex, like BuildPro, Lumea, Meridian: everything from medium plus a bespoke mechanic built from scratch for that one project, never copied from another site." data-ru="Сложный, как BuildPro, Lumea, Meridian: всё из среднего плюс bespoke-механика, спроектированная с нуля только под этот проект, не копируется с другого сайта.">Сложный, как BuildPro, Lumea, Meridian: всё из среднего плюс bespoke-механика, спроектированная с нуля только под этот проект, не копируется с другого сайта.</span></div>
           </div>
 
           <div class="svc" data-anim="rise" data-d="2">
             <div class="svc-top">
-              <div class="svc-name">Многостраничный сайт для бизнеса</div>
+              <div class="svc-name" data-en="Multi-page site for a business" data-ru="Многостраничный сайт для бизнеса">Многостраничный сайт для бизнеса</div>
               <div class="svc-price">6 500-9 000 AED</div>
             </div>
-            <div class="svc-sub">Несколько реальных страниц с переходами, не якоря на одной простыне.</div>
-            <div class="svc-line"><span class="svc-tag lo">6 500 AED</span> 3-5 страниц (главная, о нас, услуги или каталог, контакты), общий анимационный движок, без сложной бизнес-логики.</div>
-            <div class="svc-line"><span class="svc-tag hi">9 000 AED</span> Каталог с карточками товаров или услуг, фильтры, доп. интеграции (карта, форма-квиз, вебхук в CRM).</div>
+            <div class="svc-sub" data-en="Several real pages with actual navigation, not anchors on one sheet." data-ru="Несколько реальных страниц с переходами, не якоря на одной простыне.">Несколько реальных страниц с переходами, не якоря на одной простыне.</div>
+            <div class="svc-line"><span class="svc-tag lo">6 500 AED</span><span data-en="3-5 pages (home, about, services or catalog, contact), shared animation engine, no complex business logic." data-ru="3-5 страниц (главная, о нас, услуги или каталог, контакты), общий анимационный движок, без сложной бизнес-логики.">3-5 страниц (главная, о нас, услуги или каталог, контакты), общий анимационный движок, без сложной бизнес-логики.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">9 000 AED</span><span data-en="Catalog with product or service cards, filters, extra integrations (map, quiz form, CRM webhook)." data-ru="Каталог с карточками товаров или услуг, фильтры, доп. интеграции (карта, форма-квиз, вебхук в CRM).">Каталог с карточками товаров или услуг, фильтры, доп. интеграции (карта, форма-квиз, вебхук в CRM).</span></div>
           </div>
 
           <div class="svc" data-anim="rise" data-d="3">
             <div class="svc-top">
-              <div class="svc-name">Интернет-магазин с оплатой</div>
+              <div class="svc-name" data-en="Online store with payments" data-ru="Интернет-магазин с оплатой">Интернет-магазин с оплатой</div>
               <div class="svc-price">от 12 000 AED</div>
             </div>
-            <div class="svc-sub">С приёмом платежей и логикой заказа.</div>
-            <div class="svc-line">Цена зависит от платёжной интеграции и склада остатков, обсуждается на созвоне до старта.</div>
+            <div class="svc-sub" data-en="With payment acceptance and order logic." data-ru="С приёмом платежей и логикой заказа.">С приёмом платежей и логикой заказа.</div>
+            <div class="svc-line" data-en="Price depends on the payment integration and stock, discussed on a call before starting." data-ru="Цена зависит от платёжной интеграции и склада остатков, обсуждается на созвоне до старта.">Цена зависит от платёжной интеграции и склада остатков, обсуждается на созвоне до старта.</div>
           </div>
         </div>
 
         <div class="pricing-note" data-anim="rise">
-          <p><b>Важно:</b> цена, это только работа над сайтом. Домен, хостинг, деплой, подключение платёжной системы и любые сторонние сервисы вы оплачиваете сами, напрямую поставщику. Это не входит в стоимость.</p>
+          <p><b data-en="Important:" data-ru="Важно:">Важно:</b> <span data-en="the price covers work on the site only. Domain, hosting, deployment, payment system setup and any third-party services are paid by you directly to the provider. That is not included in the price." data-ru="цена, это только работа над сайтом. Домен, хостинг, деплой, подключение платёжной системы и любые сторонние сервисы вы оплачиваете сами, напрямую поставщику. Это не входит в стоимость.">цена, это только работа над сайтом. Домен, хостинг, деплой, подключение платёжной системы и любые сторонние сервисы вы оплачиваете сами, напрямую поставщику. Это не входит в стоимость.</span></p>
         </div>
       </div>
     </section>
@@ -85,36 +90,36 @@
     <section class="pricing" id="ai">
       <div class="wrap">
         <div class="pricing-head" data-anim="rise">
-          <h2>🧠 Нейросети под задачу</h2>
+          <h2 data-en="🧠 AI tools for your task" data-ru="🧠 Нейросети под задачу">🧠 Нейросети под задачу</h2>
         </div>
 
         <div class="pricing-grid">
           <div class="svc" data-anim="rise">
             <div class="svc-top">
-              <div class="svc-name">Личный AI-ассистент</div>
+              <div class="svc-name" data-en="Personal AI assistant" data-ru="Личный AI-ассистент">Личный AI-ассистент</div>
               <div class="svc-price">300-900 AED</div>
             </div>
-            <div class="svc-sub">Собираю персонального помощника под конкретные задачи.</div>
-            <div class="svc-line"><span class="svc-tag lo">300 AED</span> Помощник под одну задачу, например только по английскому или список дел.</div>
-            <div class="svc-line"><span class="svc-tag hi">900 AED</span> Большой ассистент на всю жизнь: задачи, распорядок, напоминания, строка продуктивности.</div>
+            <div class="svc-sub" data-en="I build a personal assistant around specific tasks." data-ru="Собираю персонального помощника под конкретные задачи.">Собираю персонального помощника под конкретные задачи.</div>
+            <div class="svc-line"><span class="svc-tag lo">300 AED</span><span data-en="Assistant for one task, for example just English practice, or a to-do list." data-ru="Помощник под одну задачу, например только по английскому или список дел.">Помощник под одну задачу, например только по английскому или список дел.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">900 AED</span><span data-en="A full life assistant: tasks, schedule, reminders, a productivity dashboard." data-ru="Большой ассистент на всю жизнь: задачи, распорядок, напоминания, строка продуктивности.">Большой ассистент на всю жизнь: задачи, распорядок, напоминания, строка продуктивности.</span></div>
           </div>
 
           <div class="svc" data-anim="rise" data-d="2">
             <div class="svc-top">
-              <div class="svc-name">Настройка нейросетей, созвон</div>
-              <div class="svc-price">250 AED / час</div>
+              <div class="svc-name" data-en="AI setup, a call" data-ru="Настройка нейросетей, созвон">Настройка нейросетей, созвон</div>
+              <div class="svc-price">250 AED / hour</div>
             </div>
-            <div class="svc-sub">Фиксированная ставка, не диапазон. Разбираю задачи и настраиваю нейросети под них, оплата за фактическое число часов.</div>
+            <div class="svc-sub" data-en="Fixed rate, not a range. I go through your tasks and set up AI tools for them, billed for actual hours." data-ru="Фиксированная ставка, не диапазон. Разбираю задачи и настраиваю нейросети под них, оплата за фактическое число часов.">Фиксированная ставка, не диапазон. Разбираю задачи и настраиваю нейросети под них, оплата за фактическое число часов.</div>
           </div>
 
           <div class="svc" data-anim="rise" data-d="3">
             <div class="svc-top">
-              <div class="svc-name">Помощь с установкой и подключением</div>
+              <div class="svc-name" data-en="Setup and installation help" data-ru="Помощь с установкой и подключением">Помощь с установкой и подключением</div>
               <div class="svc-price">250-700 AED</div>
             </div>
-            <div class="svc-sub">Подключаю и настраиваю нужные нейросети под работу.</div>
-            <div class="svc-line"><span class="svc-tag lo">250 AED</span> Подключить одну нейросеть и показать, как пользоваться.</div>
-            <div class="svc-line"><span class="svc-tag hi">700 AED</span> Настроить целый набор инструментов, подписки, доступы, всё связать вместе.</div>
+            <div class="svc-sub" data-en="I connect and configure the AI tools you need for work." data-ru="Подключаю и настраиваю нужные нейросети под работу.">Подключаю и настраиваю нужные нейросети под работу.</div>
+            <div class="svc-line"><span class="svc-tag lo">250 AED</span><span data-en="Connect one AI tool and show how to use it." data-ru="Подключить одну нейросеть и показать, как пользоваться.">Подключить одну нейросеть и показать, как пользоваться.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">700 AED</span><span data-en="Set up a whole toolkit, subscriptions, access, all connected together." data-ru="Настроить целый набор инструментов, подписки, доступы, всё связать вместе.">Настроить целый набор инструментов, подписки, доступы, всё связать вместе.</span></div>
           </div>
         </div>
       </div>
@@ -123,48 +128,48 @@
     <section class="pricing" id="bots">
       <div class="wrap">
         <div class="pricing-head" data-anim="rise">
-          <h2>🤖 Телеграм: боты и мини-приложения</h2>
+          <h2 data-en="🤖 Telegram: bots and mini apps" data-ru="🤖 Телеграм: боты и мини-приложения">🤖 Телеграм: боты и мини-приложения</h2>
         </div>
 
         <div class="pricing-grid">
           <div class="svc" data-anim="rise">
             <div class="svc-top">
-              <div class="svc-name">Простой бот</div>
+              <div class="svc-name" data-en="Simple bot" data-ru="Простой бот">Простой бот</div>
               <div class="svc-price">500-1 200 AED</div>
             </div>
-            <div class="svc-sub">Автоответчик, выдача материалов, анкеты, FAQ.</div>
-            <div class="svc-line"><span class="svc-tag lo">500 AED</span> Приветствие плюс выдача одного файла, или пара кнопок FAQ.</div>
-            <div class="svc-line"><span class="svc-tag hi">1 200 AED</span> Меню с разделами, сбор анкеты в базу, проверка подписки, несколько сценариев.</div>
+            <div class="svc-sub" data-en="Auto-reply, sending out materials, forms, FAQ." data-ru="Автоответчик, выдача материалов, анкеты, FAQ.">Автоответчик, выдача материалов, анкеты, FAQ.</div>
+            <div class="svc-line"><span class="svc-tag lo">500 AED</span><span data-en="A greeting plus sending one file, or a couple of FAQ buttons." data-ru="Приветствие плюс выдача одного файла, или пара кнопок FAQ.">Приветствие плюс выдача одного файла, или пара кнопок FAQ.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">1 200 AED</span><span data-en="A menu with sections, form collected into a database, subscription check, several scenarios." data-ru="Меню с разделами, сбор анкеты в базу, проверка подписки, несколько сценариев.">Меню с разделами, сбор анкеты в базу, проверка подписки, несколько сценариев.</span></div>
           </div>
 
           <div class="svc" data-anim="rise" data-d="2">
             <div class="svc-top">
-              <div class="svc-name">Бот-воронка под ключ</div>
+              <div class="svc-name" data-en="Full sales funnel bot" data-ru="Бот-воронка под ключ">Бот-воронка под ключ</div>
               <div class="svc-price">2 000-6 000 AED</div>
             </div>
-            <div class="svc-sub">Ведёт по шагам, собирает базу, выдаёт продукт.</div>
-            <div class="svc-line"><span class="svc-tag lo">2 000 AED</span> Проверка подписки, сбор базы, выдача материала.</div>
-            <div class="svc-line"><span class="svc-tag hi">6 000 AED</span> Плюс оплата в боте, автоматические рассылки, реферальная система, веб-админка.</div>
+            <div class="svc-sub" data-en="Guides a person step by step, collects a database, delivers the product." data-ru="Ведёт по шагам, собирает базу, выдаёт продукт.">Ведёт по шагам, собирает базу, выдаёт продукт.</div>
+            <div class="svc-line"><span class="svc-tag lo">2 000 AED</span><span data-en="Subscription check, database collection, delivering the material." data-ru="Проверка подписки, сбор базы, выдача материала.">Проверка подписки, сбор базы, выдача материала.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">6 000 AED</span><span data-en="Plus payments in the bot, automated broadcasts, a referral system, a web admin panel." data-ru="Плюс оплата в боте, автоматические рассылки, реферальная система, веб-админка.">Плюс оплата в боте, автоматические рассылки, реферальная система, веб-админка.</span></div>
           </div>
 
           <div class="svc" data-anim="rise" data-d="3">
             <div class="svc-top">
-              <div class="svc-name">Мини-приложение в телеграме</div>
+              <div class="svc-name" data-en="Telegram mini app" data-ru="Мини-приложение в телеграме">Мини-приложение в телеграме</div>
               <div class="svc-price">1 500-5 000 AED</div>
             </div>
-            <div class="svc-sub">Полноценное приложение прямо внутри телеграма.</div>
-            <div class="svc-line"><span class="svc-tag lo">1 500 AED</span> Простой экран, например каталог или калькулятор.</div>
-            <div class="svc-line"><span class="svc-tag hi">5 000 AED</span> Приложение с корзиной, оплатой, личным кабинетом, записью.</div>
+            <div class="svc-sub" data-en="A full app right inside Telegram." data-ru="Полноценное приложение прямо внутри телеграма.">Полноценное приложение прямо внутри телеграма.</div>
+            <div class="svc-line"><span class="svc-tag lo">1 500 AED</span><span data-en="A simple screen, for example a catalog or a calculator." data-ru="Простой экран, например каталог или калькулятор.">Простой экран, например каталог или калькулятор.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">5 000 AED</span><span data-en="An app with a cart, payments, a personal account, bookings." data-ru="Приложение с корзиной, оплатой, личным кабинетом, записью.">Приложение с корзиной, оплатой, личным кабинетом, записью.</span></div>
           </div>
 
           <div class="svc" data-anim="rise" data-d="4">
             <div class="svc-top">
-              <div class="svc-name">AI-бот для бизнеса</div>
+              <div class="svc-name" data-en="AI bot for business" data-ru="AI-бот для бизнеса">AI-бот для бизнеса</div>
               <div class="svc-price">2 000-7 000 AED</div>
             </div>
-            <div class="svc-sub">Бот сам отвечает клиентам и снимает рутину.</div>
-            <div class="svc-line"><span class="svc-tag lo">2 000 AED</span> Отвечает на частые вопросы клиентов по заданным темам.</div>
-            <div class="svc-line"><span class="svc-tag hi">7 000 AED</span> Понимает свободные вопросы, ведёт диалог, обрабатывает заявки, база и рассылки.</div>
+            <div class="svc-sub" data-en="The bot answers clients itself and takes routine work off you." data-ru="Бот сам отвечает клиентам и снимает рутину.">Бот сам отвечает клиентам и снимает рутину.</div>
+            <div class="svc-line"><span class="svc-tag lo">2 000 AED</span><span data-en="Answers frequent client questions on set topics." data-ru="Отвечает на частые вопросы клиентов по заданным темам.">Отвечает на частые вопросы клиентов по заданным темам.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">7 000 AED</span><span data-en="Understands free-form questions, holds a conversation, processes leads, database and broadcasts." data-ru="Понимает свободные вопросы, ведёт диалог, обрабатывает заявки, база и рассылки.">Понимает свободные вопросы, ведёт диалог, обрабатывает заявки, база и рассылки.</span></div>
           </div>
         </div>
       </div>
@@ -173,38 +178,38 @@
     <section class="pricing" id="learn">
       <div class="wrap">
         <div class="pricing-head" data-anim="rise">
-          <h2>🎓 Обучение и продукты</h2>
+          <h2 data-en="🎓 Learning and products" data-ru="🎓 Обучение и продукты">🎓 Обучение и продукты</h2>
         </div>
 
         <div class="pricing-grid">
           <div class="svc" data-anim="rise">
             <div class="svc-top">
-              <div class="svc-name">Урок или мини-курс</div>
+              <div class="svc-name" data-en="Lesson or mini-course" data-ru="Урок или мини-курс">Урок или мини-курс</div>
               <div class="svc-price">350-2 500 AED</div>
             </div>
-            <div class="svc-sub">Учу вайбкодингу и работе с нейросетями под конкретную цель.</div>
-            <div class="svc-line"><span class="svc-tag lo">350 AED</span> Один созвон, 60 минут, по конкретной теме.</div>
-            <div class="svc-line"><span class="svc-tag hi">2 500 AED</span> Пакет из 4 созвонов по 60 минут до результата, с поддержкой и домашками между встречами.</div>
+            <div class="svc-sub" data-en="I teach vibe-coding and working with AI toward a specific goal." data-ru="Учу вайбкодингу и работе с нейросетями под конкретную цель.">Учу вайбкодингу и работе с нейросетями под конкретную цель.</div>
+            <div class="svc-line"><span class="svc-tag lo">350 AED</span><span data-en="One 60-minute call on a specific topic." data-ru="Один созвон, 60 минут, по конкретной теме.">Один созвон, 60 минут, по конкретной теме.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">2 500 AED</span><span data-en="A package of 4 60-minute calls toward a result, with support and homework between sessions." data-ru="Пакет из 4 созвонов по 60 минут до результата, с поддержкой и домашками между встречами.">Пакет из 4 созвонов по 60 минут до результата, с поддержкой и домашками между встречами.</span></div>
           </div>
 
           <div class="svc" data-anim="rise" data-d="2">
             <div class="svc-top">
-              <div class="svc-name">Контент-помощник, автоматизация блога</div>
+              <div class="svc-name" data-en="Content assistant, blog automation" data-ru="Контент-помощник, автоматизация блога">Контент-помощник, автоматизация блога</div>
               <div class="svc-price">500-2 000 AED</div>
             </div>
-            <div class="svc-sub">Собираю ассистента под сценарии, посты, идеи.</div>
-            <div class="svc-line"><span class="svc-tag lo">500 AED</span> Ассистент, который помогает с идеями и постами.</div>
-            <div class="svc-line"><span class="svc-tag hi">2 000 AED</span> Система под сценарии, посты, SEO, с загруженными материалами клиента.</div>
+            <div class="svc-sub" data-en="I build an assistant for scripts, posts, ideas." data-ru="Собираю ассистента под сценарии, посты, идеи.">Собираю ассистента под сценарии, посты, идеи.</div>
+            <div class="svc-line"><span class="svc-tag lo">500 AED</span><span data-en="An assistant that helps with ideas and posts." data-ru="Ассистент, который помогает с идеями и постами.">Ассистент, который помогает с идеями и постами.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">2 000 AED</span><span data-en="A system for scripts, posts, SEO, loaded with your own materials." data-ru="Система под сценарии, посты, SEO, с загруженными материалами клиента.">Система под сценарии, посты, SEO, с загруженными материалами клиента.</span></div>
           </div>
 
           <div class="svc" data-anim="rise" data-d="3">
             <div class="svc-top">
-              <div class="svc-name">Наборы промптов и шаблонов</div>
+              <div class="svc-name" data-en="Prompt and template packs" data-ru="Наборы промптов и шаблонов">Наборы промптов и шаблонов</div>
               <div class="svc-price">40-200 AED</div>
             </div>
-            <div class="svc-sub">Продукт, а не услуга.</div>
-            <div class="svc-line"><span class="svc-tag lo">40 AED</span> Маленький набор промптов под одну тему.</div>
-            <div class="svc-line"><span class="svc-tag hi">200 AED</span> Большой пакет, шаблоны ассистентов плюс инструкция как пользоваться.</div>
+            <div class="svc-sub" data-en="A product, not a service." data-ru="Продукт, а не услуга.">Продукт, а не услуга.</div>
+            <div class="svc-line"><span class="svc-tag lo">40 AED</span><span data-en="A small prompt pack on one topic." data-ru="Маленький набор промптов под одну тему.">Маленький набор промптов под одну тему.</span></div>
+            <div class="svc-line"><span class="svc-tag hi">200 AED</span><span data-en="A big pack, assistant templates plus instructions on how to use them." data-ru="Большой пакет, шаблоны ассистентов плюс инструкция как пользоваться.">Большой пакет, шаблоны ассистентов плюс инструкция как пользоваться.</span></div>
           </div>
         </div>
       </div>
@@ -212,10 +217,10 @@
 
     <section class="contact" id="contact">
       <div class="wrap contact-inner">
-        <h2 class="contact-title" data-anim="wipe">Расскажите про нишу и задачу</h2>
-        <p class="contact-sub" data-anim="rise">Соберу под неё. Пишите в Telegram или WhatsApp, отвечаю быстро.</p>
+        <h2 class="contact-title" data-anim="wipe" data-en="Tell me about your niche and goal" data-ru="Расскажите про нишу и задачу">Расскажите про нишу и задачу</h2>
+        <p class="contact-sub" data-anim="rise" data-en="I'll build around it. Message me on Telegram or WhatsApp, I reply fast." data-ru="Соберу под неё. Пишите в Telegram или WhatsApp, отвечаю быстро.">Соберу под неё. Пишите в Telegram или WhatsApp, отвечаю быстро.</p>
         <div class="contact-actions" data-anim="rise" data-d="2">
-          <a href="https://t.me/pleshkanp?text=Здравствуйте! Хочу обсудить проект." target="_blank" rel="noopener" class="btn btn-primary magnetic">Написать в Telegram</a>
+          <a href="https://t.me/pleshkanp?text=Здравствуйте! Хочу обсудить проект." target="_blank" rel="noopener" class="btn btn-primary magnetic" data-en="Message on Telegram" data-ru="Написать в Telegram">Написать в Telegram</a>
           <a href="https://wa.me/971526682170?text=Здравствуйте! Хочу обсудить проект." target="_blank" rel="noopener" class="btn btn-outline magnetic">WhatsApp</a>
         </div>
       </div>
@@ -225,10 +230,11 @@
   <footer class="pf-footer">
     <div class="wrap pf-footer-inner">
       <span>© 2026 pleshkysh</span>
-      <span>Сайты и лендинги на нейросетях</span>
+      <span data-en="Websites and landing pages, built with AI" data-ru="Сайты и лендинги на нейросетях">Сайты и лендинги на нейросетях</span>
     </div>
   </footer>
 
+  <script src="lang.js?v=1"></script>
   <script defer src="_shared/vendor/gsap.min.js"></script>
   <script defer src="_shared/vendor/ScrollTrigger.min.js"></script>
   <script defer src="_shared/motion.js"></script>

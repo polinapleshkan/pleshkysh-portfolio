@@ -105,6 +105,15 @@ h1, h2, h3 { margin: 0; font-family: var(--font-display); font-weight: 700; lett
 .pf-nav { display: flex; align-items: center; gap: 24px; margin-right: auto; margin-left: 32px; }
 .pf-nav a { font-family: var(--font-display); font-weight: 600; font-size: 0.92rem; color: var(--ink-2); text-decoration: none; transition: color 0.2s var(--ease); }
 .pf-nav a:hover, .pf-nav a.is-active { color: var(--ink); }
+.pill-lang {
+  display: inline-flex; align-items: center; gap: 4px;
+  background: none; border: none; cursor: pointer;
+  font-family: var(--font-display); font-weight: 700; font-size: 0.78rem; letter-spacing: 0.04em;
+  color: var(--ink-2); padding: 4px 2px;
+}
+.pill-lang .lang-opt { transition: color 0.2s var(--ease); }
+.pill-lang .lang-opt.active { color: var(--ink); }
+.pill-lang .lang-sep { opacity: 0.4; }
 
 /* ---------- Intro ---------- */
 .intro { position: relative; padding: clamp(56px, 10vw, 120px) 0 clamp(32px, 5vw, 56px); overflow: hidden; }
