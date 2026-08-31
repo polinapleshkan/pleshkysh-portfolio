@@ -42,8 +42,23 @@
     }
   }
 
+  // Превью грузим по одному, только когда карточка реально подъезжает к
+  // экрану. Все 7 живых сайтов разом на старте роняли встроенный браузер
+  // Instagram (не хватает памяти WebView) при скролле с телефона.
   var frames = document.querySelectorAll(".thumb-frame[data-preview]");
-  for (var i = 0; i < frames.length; i++) buildPreview(frames[i]);
+  if (window.IntersectionObserver) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          buildPreview(entry.target);
+          io.unobserve(entry.target);
+        }
+      });
+    }, { rootMargin: "200px 0px" });
+    for (var i = 0; i < frames.length; i++) io.observe(frames[i]);
+  } else {
+    for (var j = 0; j < frames.length; j++) buildPreview(frames[j]);
+  }
 
   /* ---- Модалка «окно браузера» ---- */
   var viewer = document.getElementById("viewer");
